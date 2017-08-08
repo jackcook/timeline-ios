@@ -43,11 +43,11 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - UICollectionViewDataSource Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 2 ? events.count : 1
+        return section == 0 ? 1 : events.count + 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,13 +55,18 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         case 0:
             return collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
         case 1:
-            return collectionView.dequeueReusableCell(withReuseIdentifier: FillCell.identifier, for: indexPath)
-        case 2:
             guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
                 fatalError()
             }
             
-            let identifier = layoutAttributes.frame.origin.y == 0 ? "EventCellTop" : "EventCellBottom"
+            let identifier: String
+            
+            if indexPath.row == 0 || indexPath.row == events.count + 1 {
+                identifier = "FillCell"
+            } else {
+                identifier = layoutAttributes.frame.origin.y == 0 ? "EventCellTop" : "EventCellBottom"
+            }
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
             
             return cell
@@ -77,9 +82,12 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         case 0:
             return view.frame.size
         case 1:
-            return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
-        case 2:
-            return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
+            switch indexPath.row {
+            case 0, events.count + 1:
+                return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
+            default:
+                return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
+            }
         default:
             return .zero
         }

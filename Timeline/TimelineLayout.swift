@@ -47,38 +47,47 @@ class TimelineLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        guard let attributes = super.layoutAttributesForElements(in: rect) else {
-            return nil
-        }
-        
-        return attributes.flatMap {
-            let indexPath = $0.indexPath
-            
-            switch indexPath.section {
-            case 1 ... 2:
-                return self.layoutAttributesForItem(at: indexPath)
-            default:
-                return super.layoutAttributesForItem(at: indexPath)
-            }
-        }
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    private func frameForCell(at indexPath: IndexPath) -> CGRect {
         guard let collectionView = collectionView else {
-            return nil
+            return .zero
         }
-        
-        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         
         switch indexPath.section {
         case 1:
-            attributes.frame = CGRect(x: collectionView.frame.size.width, y: 0, width: eventWidth / 2, height: eventHeight)
-        case 2:
-            attributes.frame = CGRect(x: collectionView.frame.size.width + CGFloat(indexPath.item) * (eventWidth / 2), y: indexPath.item % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
+            switch indexPath.row {
+            case 0:
+                return CGRect(x: collectionView.frame.size.width, y: 0, width: eventWidth / 2, height: eventHeight)
+            case events.count + 1:
+                return CGRect(x: collectionView.frame.size.width + (CGFloat(events.count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
+            default:
+                return CGRect(x: collectionView.frame.size.width + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
+            }
         default:
-            return nil
+            return .zero
         }
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        var layoutAttributes = [UICollectionViewLayoutAttributes]()
+        
+        for section in 0 ..< (collectionView?.numberOfSections ?? 0) {
+            for item in 0 ..< (collectionView?.numberOfItems(inSection: section) ?? 0) {
+                let indexPath = IndexPath(item: item, section: section)
+                let frame = frameForCell(at: indexPath)
+                
+                if rect.intersects(frame), let attributes = collectionView?.layoutAttributesForItem(at: indexPath) {
+                    attributes.frame = frame
+                    layoutAttributes.append(attributes)
+                }
+            }
+        }
+        
+        return layoutAttributes
+    }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+        attributes.frame = frameForCell(at: indexPath)
         
         return attributes
     }
