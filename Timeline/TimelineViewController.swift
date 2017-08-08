@@ -13,6 +13,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var events: [Event] = [
+        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -3, to: Date())!),
         Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
         Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
         Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
@@ -35,9 +36,12 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.collectionViewLayout = layout
         
         collectionView.register(StartCell.nib, forCellWithReuseIdentifier: StartCell.identifier)
-        collectionView.register(FillCell.nib, forCellWithReuseIdentifier: FillCell.identifier)
-        collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
+        
+        collectionView.register(FillCell.topNib, forCellWithReuseIdentifier: FillCell.topIdentifier)
+        collectionView.register(FillCell.bottomNib, forCellWithReuseIdentifier: FillCell.bottomIdentifier)
+        
         collectionView.register(EventCell.topNib, forCellWithReuseIdentifier: EventCell.topIdentifier)
+        collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
     }
     
     // MARK: - UICollectionViewDataSource Methods
@@ -62,9 +66,9 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             let identifier: String
             
             if indexPath.row == 0 || indexPath.row == events.count + 1 {
-                identifier = "FillCell"
+                identifier = layoutAttributes.frame.origin.y == 0 ? FillCell.topIdentifier : FillCell.bottomIdentifier
             } else {
-                identifier = layoutAttributes.frame.origin.y == 0 ? "EventCellTop" : "EventCellBottom"
+                identifier = layoutAttributes.frame.origin.y == 0 ? EventCell.topIdentifier : EventCell.bottomIdentifier
             }
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)

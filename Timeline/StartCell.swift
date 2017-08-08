@@ -13,7 +13,7 @@ class StartCell: UICollectionViewCell {
     // MARK: - Constants
     
     static let identifier = "StartCell"
-    static let nib = UINib(nibName: "StartCell", bundle: Bundle.main)
+    static let nib = UINib(nibName: StartCell.identifier, bundle: Bundle.main)
     
     // MARK: - View Life Cycle
     

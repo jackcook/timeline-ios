@@ -10,6 +10,9 @@ import UIKit
 
 class FillCell: UICollectionViewCell {
     
-    static let identifier = "FillCell"
-    static let nib = UINib(nibName: "FillCell", bundle: Bundle.main)
+    static let topIdentifier = "FillCellTop"
+    static let topNib = UINib(nibName: FillCell.topIdentifier, bundle: Bundle.main)
+    
+    static let bottomIdentifier = "FillCellBottom"
+    static let bottomNib = UINib(nibName: FillCell.bottomIdentifier, bundle: Bundle.main)
 }

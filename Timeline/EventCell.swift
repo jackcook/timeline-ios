@@ -12,11 +12,11 @@ class EventCell: UICollectionViewCell {
     
     // MARK: - Constants
     
-    static let bottomIdentifier = "EventCellBottom"
-    static let bottomNib = UINib(nibName: "EventCellBottom", bundle: Bundle.main)
-    
     static let topIdentifier = "EventCellTop"
-    static let topNib = UINib(nibName: "EventCellTop", bundle: Bundle.main)
+    static let topNib = UINib(nibName: EventCell.topIdentifier, bundle: Bundle.main)
+    
+    static let bottomIdentifier = "EventCellBottom"
+    static let bottomNib = UINib(nibName: EventCell.bottomIdentifier, bundle: Bundle.main)
     
     // MARK: - View Life Cycle
     
