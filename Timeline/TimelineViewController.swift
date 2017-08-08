@@ -12,11 +12,15 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var cells: [TimelineCell] = [
-        .start,
-        .event,
-        .event
+    private var events: [Event] = [
+        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
+        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
+        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
     ]
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,50 +28,57 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        let layout = UICollectionViewFlowLayout()
+        let layout = TimelineLayout(events: events)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         
         collectionView.register(StartCell.nib, forCellWithReuseIdentifier: StartCell.identifier)
+        collectionView.register(FillCell.nib, forCellWithReuseIdentifier: FillCell.identifier)
         collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
         collectionView.register(EventCell.topNib, forCellWithReuseIdentifier: EventCell.topIdentifier)
     }
     
-    // MARK: - Private Methods
-    
-    private func cellModel(for indexPath: IndexPath) -> TimelineCell {
-        return cells[indexPath.item]
-    }
-    
     // MARK: - UICollectionViewDataSource Methods
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cells.count
+        return section == 2 ? events.count : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = cellModel(for: indexPath)
-
-        guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
-            fatalError()
+        switch indexPath.section {
+        case 0:
+            return collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
+        case 1:
+            return collectionView.dequeueReusableCell(withReuseIdentifier: FillCell.identifier, for: indexPath)
+        case 2:
+            guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
+                fatalError()
+            }
+            
+            let identifier = layoutAttributes.frame.origin.y == 0 ? "EventCellTop" : "EventCellBottom"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+            
+            return cell
+        default:
+            return UICollectionViewCell()
         }
-        
-        let position: TimelineCellPosition = layoutAttributes.frame.origin.y == 0 ? .top : .bottom
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: model.identifier(position: position), for: indexPath)
-        
-        return cell
     }
     
     // MARK: UICollectionViewDelegateFlowLayout Methods
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch cellModel(for: indexPath) {
-        case .start:
+        switch indexPath.section {
+        case 0:
             return view.frame.size
-        case .event:
+        case 1:
+            return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
+        case 2:
             return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
         default:
             return .zero

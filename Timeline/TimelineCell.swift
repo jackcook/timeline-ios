@@ -8,14 +8,17 @@
 
 enum TimelineCell {
     case start
-    case event
+    case fill
+    case event(Event)
     case end
     
     func identifier(position: TimelineCellPosition) -> String {
         switch self {
+        case .fill:
+            return FillCell.identifier
         case .start:
             return StartCell.identifier
-        case .event:
+        case .event(_):
             return position == .top ? EventCell.topIdentifier : EventCell.bottomIdentifier
         case .end:
             return "EndCell"
