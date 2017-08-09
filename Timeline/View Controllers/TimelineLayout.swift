@@ -62,27 +62,16 @@ class TimelineLayout: UICollectionViewFlowLayout {
         
         switch indexPath.section {
         case 0:
-            return collectionView.bounds
-        case 1:
-            switch indexPath.row {
-            case 0:
-                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: eventHeight)
-            case events[indexPath.section - 1].count + 1:
-                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
-            default:
-                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
-            }
-        case 2:
-            switch indexPath.row {
-            case 0:
-                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: eventHeight)
-            case events[indexPath.section - 1].count + 1:
-                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
-            default:
-                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
-            }
+            return CGRect(x: 0, y: 0, width: collectionView.frame.size.width, height: collectionView.frame.size.height)
         default:
-            return .zero
+            switch indexPath.row {
+            case 0:
+                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: eventHeight)
+            case events[indexPath.section - 1].count + 1:
+                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
+            default:
+                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
+            }
         }
     }
     

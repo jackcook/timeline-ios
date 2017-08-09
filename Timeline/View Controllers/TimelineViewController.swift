@@ -66,17 +66,16 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UICollectionViewCell
+        
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
-            cell.backgroundColor = .firstYear
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
         default:
             guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
                 fatalError()
             }
             
-            let cell: UICollectionViewCell
             let identifier: String
             
             if indexPath.row == 0 || indexPath.row == events[indexPath.section - 1].count + 1 {
@@ -97,18 +96,18 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
                 eventCell.event = events[indexPath.section - 1][indexPath.row - 1]
                 cell = eventCell
             }
-            
-            switch indexPath.section {
-            case 1:
-                cell.backgroundColor = .secondYear
-            case 2:
-                cell.backgroundColor = .thirdYear
-            default:
-                cell.backgroundColor = .white
-            }
-            
-            return cell
         }
+        
+        let colors = UIColor.sectionColors
+        var colorIndex = indexPath.section
+        
+        while colorIndex > colors.count - 1 {
+            colorIndex -= colors.count
+        }
+        
+        cell.backgroundColor = colors[colorIndex]
+        
+        return cell
     }
     
     // MARK: UICollectionViewDelegateFlowLayout Methods
