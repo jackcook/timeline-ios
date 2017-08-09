@@ -7,43 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		753BE0651F3A4697006D2B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753BE0641F3A4697006D2B1F /* AppDelegate.swift */; };
-		753BE06A1F3A4697006D2B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BE0681F3A4697006D2B1F /* Main.storyboard */; };
 		753BE06C1F3A4697006D2B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753BE06B1F3A4697006D2B1F /* Assets.xcassets */; };
-		753BE06F1F3A4697006D2B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BE06D1F3A4697006D2B1F /* LaunchScreen.storyboard */; };
-		7596825B1F3A62260032B041 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596825A1F3A62260032B041 /* EventCell.swift */; };
-		7596825D1F3A62390032B041 /* EventCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7596825C1F3A62390032B041 /* EventCellTop.xib */; };
-		7596825F1F3A65720032B041 /* EventCellBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7596825E1F3A65720032B041 /* EventCellBottom.xib */; };
-		759682611F3A67340032B041 /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759682601F3A67340032B041 /* TimelineLayout.swift */; };
-		759682681F3A72570032B041 /* FillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759682671F3A72570032B041 /* FillCell.swift */; };
-		7596826A1F3A72660032B041 /* FillCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = 759682691F3A72660032B041 /* FillCellTop.xib */; };
-		7596826C1F3A75BC0032B041 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7596826B1F3A75BC0032B041 /* Event.swift */; };
-		7596826E1F3A81940032B041 /* FillCellBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7596826D1F3A81940032B041 /* FillCellBottom.xib */; };
-		759A81F01F3A472F00FE47EF /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A81EF1F3A472F00FE47EF /* TimelineViewController.swift */; };
-		759A81F21F3A479C00FE47EF /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A81F11F3A479C00FE47EF /* StartCell.swift */; };
-		759A81F41F3A47B100FE47EF /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 759A81F31F3A47B100FE47EF /* StartCell.xib */; };
-		EB19B22A1F3AE10900D0D954 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2291F3AE10900D0D954 /* UIColor+Extensions.swift */; };
+		EB19B2301F3AE3A900D0D954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B22C1F3AE3A900D0D954 /* AppDelegate.swift */; };
+		EB19B2311F3AE3A900D0D954 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB19B22D1F3AE3A900D0D954 /* Info.plist */; };
+		EB19B2321F3AE3A900D0D954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB19B22E1F3AE3A900D0D954 /* LaunchScreen.storyboard */; };
+		EB19B2331F3AE3A900D0D954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB19B22F1F3AE3A900D0D954 /* Main.storyboard */; };
+		EB19B2371F3AE3BA00D0D954 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2361F3AE3BA00D0D954 /* UIColor+Extensions.swift */; };
+		EB19B23A1F3AE3CC00D0D954 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2391F3AE3CC00D0D954 /* Event.swift */; };
+		EB19B23F1F3AE3E000D0D954 /* TimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B23D1F3AE3E000D0D954 /* TimelineLayout.swift */; };
+		EB19B2401F3AE3E000D0D954 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B23E1F3AE3E000D0D954 /* TimelineViewController.swift */; };
+		EB19B24A1F3AE3EF00D0D954 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2421F3AE3EF00D0D954 /* EventCell.swift */; };
+		EB19B24B1F3AE3EF00D0D954 /* EventCellBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2431F3AE3EF00D0D954 /* EventCellBottom.xib */; };
+		EB19B24C1F3AE3EF00D0D954 /* EventCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2441F3AE3EF00D0D954 /* EventCellTop.xib */; };
+		EB19B24D1F3AE3EF00D0D954 /* FillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2451F3AE3EF00D0D954 /* FillCell.swift */; };
+		EB19B24E1F3AE3EF00D0D954 /* FillCellBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2461F3AE3EF00D0D954 /* FillCellBottom.xib */; };
+		EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */; };
+		EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2481F3AE3EF00D0D954 /* StartCell.swift */; };
+		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		753BE0611F3A4697006D2B1F /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		753BE0641F3A4697006D2B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		753BE0691F3A4697006D2B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		753BE06B1F3A4697006D2B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		753BE06E1F3A4697006D2B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		753BE0701F3A4697006D2B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7596825A1F3A62260032B041 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		7596825C1F3A62390032B041 /* EventCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCellTop.xib; sourceTree = "<group>"; };
-		7596825E1F3A65720032B041 /* EventCellBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCellBottom.xib; sourceTree = "<group>"; };
-		759682601F3A67340032B041 /* TimelineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineLayout.swift; sourceTree = "<group>"; };
-		759682671F3A72570032B041 /* FillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillCell.swift; sourceTree = "<group>"; };
-		759682691F3A72660032B041 /* FillCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillCellTop.xib; sourceTree = "<group>"; };
-		7596826B1F3A75BC0032B041 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		7596826D1F3A81940032B041 /* FillCellBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FillCellBottom.xib; sourceTree = "<group>"; };
-		759A81EF1F3A472F00FE47EF /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		759A81F11F3A479C00FE47EF /* StartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCell.swift; sourceTree = "<group>"; };
-		759A81F31F3A47B100FE47EF /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartCell.xib; sourceTree = "<group>"; };
-		EB19B2291F3AE10900D0D954 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EB19B22C1F3AE3A900D0D954 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Application/AppDelegate.swift; sourceTree = "<group>"; };
+		EB19B22D1F3AE3A900D0D954 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Application/Info.plist; sourceTree = "<group>"; };
+		EB19B22E1F3AE3A900D0D954 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Application/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB19B22F1F3AE3A900D0D954 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Application/Main.storyboard; sourceTree = "<group>"; };
+		EB19B2361F3AE3BA00D0D954 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Common/Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EB19B2391F3AE3CC00D0D954 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Models/Event.swift; sourceTree = "<group>"; };
+		EB19B23D1F3AE3E000D0D954 /* TimelineLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineLayout.swift; path = "View Controllers/TimelineLayout.swift"; sourceTree = "<group>"; };
+		EB19B23E1F3AE3E000D0D954 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = "View Controllers/TimelineViewController.swift"; sourceTree = "<group>"; };
+		EB19B2421F3AE3EF00D0D954 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = Views/EventCell.swift; sourceTree = "<group>"; };
+		EB19B2431F3AE3EF00D0D954 /* EventCellBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCellBottom.xib; path = Views/EventCellBottom.xib; sourceTree = "<group>"; };
+		EB19B2441F3AE3EF00D0D954 /* EventCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCellTop.xib; path = Views/EventCellTop.xib; sourceTree = "<group>"; };
+		EB19B2451F3AE3EF00D0D954 /* FillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FillCell.swift; path = Views/FillCell.swift; sourceTree = "<group>"; };
+		EB19B2461F3AE3EF00D0D954 /* FillCellBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FillCellBottom.xib; path = Views/FillCellBottom.xib; sourceTree = "<group>"; };
+		EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FillCellTop.xib; path = Views/FillCellTop.xib; sourceTree = "<group>"; };
+		EB19B2481F3AE3EF00D0D954 /* StartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartCell.swift; path = Views/StartCell.swift; sourceTree = "<group>"; };
+		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,25 +77,73 @@
 		753BE0631F3A4697006D2B1F /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				753BE0641F3A4697006D2B1F /* AppDelegate.swift */,
-				759A81EF1F3A472F00FE47EF /* TimelineViewController.swift */,
-				759682601F3A67340032B041 /* TimelineLayout.swift */,
-				759A81F11F3A479C00FE47EF /* StartCell.swift */,
-				759A81F31F3A47B100FE47EF /* StartCell.xib */,
-				7596825A1F3A62260032B041 /* EventCell.swift */,
-				7596825C1F3A62390032B041 /* EventCellTop.xib */,
-				7596825E1F3A65720032B041 /* EventCellBottom.xib */,
-				759682671F3A72570032B041 /* FillCell.swift */,
-				759682691F3A72660032B041 /* FillCellTop.xib */,
-				7596826D1F3A81940032B041 /* FillCellBottom.xib */,
-				7596826B1F3A75BC0032B041 /* Event.swift */,
-				753BE0681F3A4697006D2B1F /* Main.storyboard */,
+				EB19B22B1F3AE34100D0D954 /* Application */,
+				EB19B2341F3AE3AD00D0D954 /* Common */,
+				EB19B2381F3AE3BF00D0D954 /* Models */,
+				EB19B23C1F3AE3D500D0D954 /* View Controllers */,
+				EB19B2411F3AE3E400D0D954 /* Views */,
 				753BE06B1F3A4697006D2B1F /* Assets.xcassets */,
-				753BE06D1F3A4697006D2B1F /* LaunchScreen.storyboard */,
-				753BE0701F3A4697006D2B1F /* Info.plist */,
-				EB19B2291F3AE10900D0D954 /* UIColor+Extensions.swift */,
 			);
 			path = Timeline;
+			sourceTree = "<group>";
+		};
+		EB19B22B1F3AE34100D0D954 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B22C1F3AE3A900D0D954 /* AppDelegate.swift */,
+				EB19B22D1F3AE3A900D0D954 /* Info.plist */,
+				EB19B22E1F3AE3A900D0D954 /* LaunchScreen.storyboard */,
+				EB19B22F1F3AE3A900D0D954 /* Main.storyboard */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		EB19B2341F3AE3AD00D0D954 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B2351F3AE3B300D0D954 /* Extensions */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		EB19B2351F3AE3B300D0D954 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B2361F3AE3BA00D0D954 /* UIColor+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EB19B2381F3AE3BF00D0D954 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B2391F3AE3CC00D0D954 /* Event.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EB19B23C1F3AE3D500D0D954 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B23D1F3AE3E000D0D954 /* TimelineLayout.swift */,
+				EB19B23E1F3AE3E000D0D954 /* TimelineViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EB19B2411F3AE3E400D0D954 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB19B2421F3AE3EF00D0D954 /* EventCell.swift */,
+				EB19B2431F3AE3EF00D0D954 /* EventCellBottom.xib */,
+				EB19B2441F3AE3EF00D0D954 /* EventCellTop.xib */,
+				EB19B2451F3AE3EF00D0D954 /* FillCell.swift */,
+				EB19B2461F3AE3EF00D0D954 /* FillCellBottom.xib */,
+				EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */,
+				EB19B2481F3AE3EF00D0D954 /* StartCell.swift */,
+				EB19B2491F3AE3EF00D0D954 /* StartCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +179,7 @@
 					753BE0601F3A4697006D2B1F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 59PUM5CV3T;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -157,14 +207,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7596826A1F3A72660032B041 /* FillCellTop.xib in Resources */,
-				759A81F41F3A47B100FE47EF /* StartCell.xib in Resources */,
-				753BE06F1F3A4697006D2B1F /* LaunchScreen.storyboard in Resources */,
+				EB19B24B1F3AE3EF00D0D954 /* EventCellBottom.xib in Resources */,
+				EB19B2321F3AE3A900D0D954 /* LaunchScreen.storyboard in Resources */,
+				EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */,
+				EB19B2311F3AE3A900D0D954 /* Info.plist in Resources */,
 				753BE06C1F3A4697006D2B1F /* Assets.xcassets in Resources */,
-				7596825F1F3A65720032B041 /* EventCellBottom.xib in Resources */,
-				7596825D1F3A62390032B041 /* EventCellTop.xib in Resources */,
-				753BE06A1F3A4697006D2B1F /* Main.storyboard in Resources */,
-				7596826E1F3A81940032B041 /* FillCellBottom.xib in Resources */,
+				EB19B24C1F3AE3EF00D0D954 /* EventCellTop.xib in Resources */,
+				EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */,
+				EB19B2331F3AE3A900D0D954 /* Main.storyboard in Resources */,
+				EB19B24E1F3AE3EF00D0D954 /* FillCellBottom.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,37 +226,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7596826C1F3A75BC0032B041 /* Event.swift in Sources */,
-				753BE0651F3A4697006D2B1F /* AppDelegate.swift in Sources */,
-				7596825B1F3A62260032B041 /* EventCell.swift in Sources */,
-				EB19B22A1F3AE10900D0D954 /* UIColor+Extensions.swift in Sources */,
-				759682681F3A72570032B041 /* FillCell.swift in Sources */,
-				759A81F21F3A479C00FE47EF /* StartCell.swift in Sources */,
-				759682611F3A67340032B041 /* TimelineLayout.swift in Sources */,
-				759A81F01F3A472F00FE47EF /* TimelineViewController.swift in Sources */,
+				EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */,
+				EB19B23F1F3AE3E000D0D954 /* TimelineLayout.swift in Sources */,
+				EB19B2301F3AE3A900D0D954 /* AppDelegate.swift in Sources */,
+				EB19B23A1F3AE3CC00D0D954 /* Event.swift in Sources */,
+				EB19B24D1F3AE3EF00D0D954 /* FillCell.swift in Sources */,
+				EB19B2371F3AE3BA00D0D954 /* UIColor+Extensions.swift in Sources */,
+				EB19B24A1F3AE3EF00D0D954 /* EventCell.swift in Sources */,
+				EB19B2401F3AE3E000D0D954 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		753BE0681F3A4697006D2B1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				753BE0691F3A4697006D2B1F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		753BE06D1F3A4697006D2B1F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				753BE06E1F3A4697006D2B1F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		753BE0711F3A4697006D2B1F /* Debug */ = {
@@ -307,11 +339,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59PUM5CV3T;
-				INFOPLIST_FILE = Timeline/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Timeline/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nyc.jackcook.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -320,8 +354,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59PUM5CV3T;
-				INFOPLIST_FILE = Timeline/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Timeline/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nyc.jackcook.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
