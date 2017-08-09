@@ -61,6 +61,8 @@ class TimelineLayout: UICollectionViewFlowLayout {
         let horizontalOffset = collectionView.frame.size.width + eventsBeforeThisSection * eventWidth
         
         switch indexPath.section {
+        case 0:
+            return collectionView.bounds
         case 1:
             switch indexPath.row {
             case 0:

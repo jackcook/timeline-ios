@@ -64,7 +64,9 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            return collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
+            cell.backgroundColor = .firstYear
+            return cell
         default:
             guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
                 fatalError()
@@ -79,6 +81,15 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             }
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+            
+            switch indexPath.section {
+            case 1:
+                cell.backgroundColor = .secondYear
+            case 2:
+                cell.backgroundColor = .thirdYear
+            default:
+                cell.backgroundColor = .white
+            }
             
             return cell
         }
