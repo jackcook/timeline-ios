@@ -80,7 +80,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             }
             
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 24)
+            label.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightSemibold)
             label.text = "\(year)"
             label.textColor = UIColor.white
             
@@ -147,8 +147,6 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: UICollectionViewDelegate Methods
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let minimumOffset: CGFloat = 64
-        
         for (idx, label) in yearLabels.enumerated() {
             let firstIndexPath = IndexPath(item: 0, section: idx + 1)
             let lastIndexPath = IndexPath(item: collectionView.numberOfItems(inSection: idx + 1) - 1, section: idx + 1)
@@ -159,8 +157,10 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             
             label.sizeToFit()
             
-            let startPoint = firstCellFrame.origin.x + minimumOffset
-            let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - minimumOffset - label.frame.size.width
+            let labelPadding = (view.frame.size.height * (1 / 8) - label.frame.size.height) / 2
+            
+            let startPoint = firstCellFrame.origin.x + labelPadding
+            let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - labelPadding - label.frame.size.width
             
             let currentPoint = view.convert(view.center, to: collectionView).x
             let percentage = (currentPoint - startPoint) / (endPoint - startPoint)
@@ -169,7 +169,9 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x
             let x = min(max(percentage * view.frame.size.width, minimumPoint), maximumPoint)
             
-            let frame = CGRect(x: x, y: view.frame.size.height - 64 - label.frame.size.height, width: label.frame.size.width, height: label.frame.size.height)
+            let y = view.frame.size.height * (7 / 8) + labelPadding
+            
+            let frame = CGRect(x: x, y: y, width: label.frame.size.width, height: label.frame.size.height)
             label.frame = frame
         }
     }
@@ -183,9 +185,9 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         default:
             switch indexPath.row {
             case 0, events[indexPath.section - 1].count + 1:
-                return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
+                return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height * (7 / 16))
             default:
-                return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
+                return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height * (7 / 16))
             }
         }
     }

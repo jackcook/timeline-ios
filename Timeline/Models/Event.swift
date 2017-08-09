@@ -16,7 +16,7 @@ struct Event {
         return Calendar.current.dateComponents([.month], from: Date(timeIntervalSince1970: 0), to: date).month ?? 0
     }
     
-    init(_ name: String, _ day: Int, _ month: Int, _ year: Int) {
+    init(_ name: String, _ month: Int, _ day: Int, _ year: Int) {
         self.name = name
         
         var components = DateComponents()

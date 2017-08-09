@@ -31,7 +31,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
-                    <rect key="frame" x="48" y="76" width="365" height="243"/>
+                    <rect key="frame" x="48" y="76" width="365" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -46,7 +46,6 @@
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="REU-vq-xEs"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j4X-vx-QOV"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" constant="8" id="mnt-Lw-YJM"/>
-                <constraint firstAttribute="bottom" secondItem="nm3-I9-Yg9" secondAttribute="bottom" constant="8" id="uIq-XO-Gli"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="w89-A9-VQE"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

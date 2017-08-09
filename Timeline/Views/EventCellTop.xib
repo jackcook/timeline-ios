@@ -31,7 +31,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
-                    <rect key="frame" x="48" y="8" width="365" height="243"/>
+                    <rect key="frame" x="48" y="212.5" width="365" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -45,7 +45,6 @@
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" id="Wwq-Bb-CDg"/>
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="YlK-h1-RJO"/>
                 <constraint firstAttribute="bottom" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="Yrd-yM-lQD"/>
-                <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ff6-Ft-M9H"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="hba-F8-X0M"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="odY-Ya-X4U"/>
             </constraints>

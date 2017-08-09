@@ -20,12 +20,20 @@ class TimelineLayout: UICollectionViewFlowLayout {
         return collectionView.frame.size.width / 2
     }
     
-    private var eventHeight: CGFloat {
+    private var topEventHeight: CGFloat {
         guard let collectionView = collectionView else {
             return 0
         }
         
-        return collectionView.frame.size.height / 2
+        return collectionView.frame.size.height * (7 / 16)
+    }
+    
+    private var bottomEventHeight: CGFloat {
+        guard let collectionView = collectionView else {
+            return 0
+        }
+        
+        return collectionView.frame.size.height * (9 / 16)
     }
     
     override var collectionViewContentSize: CGSize {
@@ -59,6 +67,7 @@ class TimelineLayout: UICollectionViewFlowLayout {
         }
         
         let horizontalOffset = collectionView.frame.size.width + eventsBeforeThisSection * eventWidth
+        let top = indexPath.row % 2 == 0
         
         switch indexPath.section {
         case 0:
@@ -66,11 +75,11 @@ class TimelineLayout: UICollectionViewFlowLayout {
         default:
             switch indexPath.row {
             case 0:
-                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: eventHeight)
+                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: topEventHeight)
             case events[indexPath.section - 1].count + 1:
-                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
+                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: top ? 0 : topEventHeight, width: eventWidth / 2, height: top ? topEventHeight : bottomEventHeight)
             default:
-                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
+                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: top ? 0 : topEventHeight, width: eventWidth, height: top ? topEventHeight : bottomEventHeight)
             }
         }
     }
