@@ -18,6 +18,11 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
             Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
             Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
+        ],
+        [
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
         ]
     ]
     
@@ -60,7 +65,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         switch indexPath.section {
         case 0:
             return collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
-        case 1:
+        default:
             guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
                 fatalError()
             }
@@ -76,8 +81,6 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
             
             return cell
-        default:
-            return UICollectionViewCell()
         }
     }
     
@@ -87,15 +90,13 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         switch indexPath.section {
         case 0:
             return view.frame.size
-        case 1:
+        default:
             switch indexPath.row {
             case 0, events[indexPath.section - 1].count + 1:
                 return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
             default:
                 return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
             }
-        default:
-            return .zero
         }
     }
 }
