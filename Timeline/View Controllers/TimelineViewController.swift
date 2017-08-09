@@ -26,7 +26,25 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             .firstLocalHackDay
         ],
         [
-            .hackGenY
+            .hackGenY,
+            .mcHacks,
+            .atomHacks,
+            .secondHackRU,
+            .secondLocalHackDay
+        ],
+        [
+            .techStars,
+            .hackNY,
+            .thirdHackRU,
+            .techCrunchDisrupt,
+            .secondAtomHacks,
+            .microsoftAcquisition,
+            .thirdLocalHackDay
+        ],
+        [
+            .topCharts,
+            .thirdAtomHacks,
+            .mixerRebrand
         ]
     ]
     

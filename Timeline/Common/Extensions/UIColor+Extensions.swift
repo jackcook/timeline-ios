@@ -13,6 +13,9 @@ extension UIColor {
     static let sectionColors = [
         UIColor(red: 110/255, green: 98/255, blue: 108/255, alpha: 1),
         UIColor(red: 219/255, green: 137/255, blue: 113/255, alpha: 1),
-        UIColor(red: 39/255, green: 82/255, blue: 138/255, alpha: 1)
+        UIColor(red: 39/255, green: 82/255, blue: 138/255, alpha: 1),
+        UIColor(red: 227/255, green: 76/255, blue: 79/255, alpha: 1),
+        UIColor(red: 163/255, green: 197/255, blue: 191/255, alpha: 1),
+        UIColor(red: 30/255, green: 124/255, blue: 127/255, alpha: 1)
     ]
 }
