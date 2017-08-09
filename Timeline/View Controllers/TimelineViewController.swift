@@ -12,17 +12,21 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var events = [
+    private var events: [[Event]] = [
         [
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -3, to: Date())!),
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
+            .easyMeasure
         ],
         [
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
-            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
+            .elementAnimation,
+            .mcproHosting,
+            .beamCreation,
+            .hackTheNorth,
+            .hackUpstate,
+            .hackRU,
+            .firstLocalHackDay
+        ],
+        [
+            .hackGenY
         ]
     ]
     
@@ -72,15 +76,27 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
                 fatalError()
             }
             
+            let cell: UICollectionViewCell
             let identifier: String
             
             if indexPath.row == 0 || indexPath.row == events[indexPath.section - 1].count + 1 {
                 identifier = layoutAttributes.frame.origin.y == 0 ? FillCell.topIdentifier : FillCell.bottomIdentifier
+                
+                guard let fillCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? FillCell else {
+                    fatalError("Could not get collection view cell")
+                }
+                
+                cell = fillCell
             } else {
                 identifier = layoutAttributes.frame.origin.y == 0 ? EventCell.topIdentifier : EventCell.bottomIdentifier
+                
+                guard let eventCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? EventCell else {
+                    fatalError("Could not get collection view cell")
+                }
+                
+                eventCell.event = events[indexPath.section - 1][indexPath.row - 1]
+                cell = eventCell
             }
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
             
             switch indexPath.section {
             case 1:

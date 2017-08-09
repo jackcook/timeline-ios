@@ -30,8 +30,8 @@
                         <constraint firstAttribute="height" constant="64" id="eZE-AV-FFx"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
-                    <rect key="frame" x="0.0" y="8" width="461" height="243"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
+                    <rect key="frame" x="48" y="8" width="365" height="243"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -46,13 +46,16 @@
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="YlK-h1-RJO"/>
                 <constraint firstAttribute="bottom" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="Yrd-yM-lQD"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ff6-Ft-M9H"/>
-                <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" id="hba-F8-X0M"/>
-                <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="odY-Ya-X4U"/>
+                <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="hba-F8-X0M"/>
+                <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="odY-Ya-X4U"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="label" destination="nm3-I9-Yg9" id="oHT-e6-YvK"/>
+            </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>
         </view>
     </objects>
