@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TimelineViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -48,6 +48,8 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         ]
     ]
     
+    private var yearLabels = [UILabel]()
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -71,6 +73,20 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         
         collectionView.register(EventCell.topNib, forCellWithReuseIdentifier: EventCell.topIdentifier)
         collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
+        
+        for section in events {
+            guard let year = Calendar.current.dateComponents([.year], from: section[0].date).year else {
+                return
+            }
+            
+            let label = UILabel()
+            label.font = UIFont.systemFont(ofSize: 24)
+            label.text = "\(year)"
+            label.textColor = UIColor.white
+            
+            yearLabels.append(label)
+            view.addSubview(label)
+        }
     }
     
     // MARK: - UICollectionViewDataSource Methods
@@ -126,6 +142,36 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.backgroundColor = colors[colorIndex]
         
         return cell
+    }
+    
+    // MARK: UICollectionViewDelegate Methods
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let minimumOffset: CGFloat = 64
+        
+        for (idx, label) in yearLabels.enumerated() {
+            let firstIndexPath = IndexPath(item: 0, section: idx + 1)
+            let lastIndexPath = IndexPath(item: collectionView.numberOfItems(inSection: idx + 1) - 1, section: idx + 1)
+            
+            guard let firstCellFrame = collectionView.layoutAttributesForItem(at: firstIndexPath)?.frame, let lastCellFrame = collectionView.layoutAttributesForItem(at: lastIndexPath)?.frame else {
+                continue
+            }
+            
+            label.sizeToFit()
+            
+            let startPoint = firstCellFrame.origin.x + minimumOffset
+            let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - minimumOffset - label.frame.size.width
+            
+            let currentPoint = view.convert(view.center, to: collectionView).x
+            let percentage = (currentPoint - startPoint) / (endPoint - startPoint)
+            
+            let minimumPoint = collectionView.convert(CGPoint(x: startPoint, y: 0), to: view).x
+            let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x
+            let x = min(max(percentage * view.frame.size.width, minimumPoint), maximumPoint)
+            
+            let frame = CGRect(x: x, y: view.frame.size.height - 64 - label.frame.size.height, width: label.frame.size.width, height: label.frame.size.height)
+            label.frame = frame
+        }
     }
     
     // MARK: UICollectionViewDelegateFlowLayout Methods
