@@ -12,11 +12,13 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var events: [Event] = [
-        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -3, to: Date())!),
-        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
-        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
-        Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
+    private var events = [
+        [
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -3, to: Date())!),
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -2, to: Date())!),
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!),
+            Event(name: "Testing", date: Calendar.current.date(byAdding: .hour, value: 0, to: Date())!)
+        ]
     ]
     
     override var prefersStatusBarHidden: Bool {
@@ -47,11 +49,11 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - UICollectionViewDataSource Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1 + events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 0 ? 1 : events.count + 2
+        return section == 0 ? 1 : events[section - 1].count + 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,7 +67,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             
             let identifier: String
             
-            if indexPath.row == 0 || indexPath.row == events.count + 1 {
+            if indexPath.row == 0 || indexPath.row == events[indexPath.section - 1].count + 1 {
                 identifier = layoutAttributes.frame.origin.y == 0 ? FillCell.topIdentifier : FillCell.bottomIdentifier
             } else {
                 identifier = layoutAttributes.frame.origin.y == 0 ? EventCell.topIdentifier : EventCell.bottomIdentifier
@@ -87,7 +89,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             return view.frame.size
         case 1:
             switch indexPath.row {
-            case 0, events.count + 1:
+            case 0, events[indexPath.section - 1].count + 1:
                 return CGSize(width: view.frame.size.width / 4, height: view.frame.size.height / 2)
             default:
                 return CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)

@@ -10,7 +10,7 @@ import UIKit
 
 class TimelineLayout: UICollectionViewFlowLayout {
     
-    private let events: [Event]
+    private let events: [[Event]]
     
     private var eventWidth: CGFloat {
         guard let collectionView = collectionView else {
@@ -33,11 +33,11 @@ class TimelineLayout: UICollectionViewFlowLayout {
             return .zero
         }
         
-        let width = collectionView.frame.size.width + (eventWidth / 2) * CGFloat(events.count + 1)
+        let width = collectionView.frame.size.width + (eventWidth / 2) * CGFloat(events.flatMap({ $0 }).count + events.count - 1 + 1)
         return CGSize(width: width, height: collectionView.frame.size.height)
     }
     
-    init(events: [Event]) {
+    init(events: [[Event]]) {
         self.events = events
         
         super.init()
@@ -52,15 +52,23 @@ class TimelineLayout: UICollectionViewFlowLayout {
             return .zero
         }
         
+        var eventsBeforeThisSection: CGFloat = 0
+        
+        for (idx, sectionEvents) in events.enumerated() where idx < indexPath.section - 1 {
+            eventsBeforeThisSection += CGFloat(sectionEvents.count) + 0.5
+        }
+        
+        let horizontalOffset = collectionView.frame.size.width + eventsBeforeThisSection * eventWidth
+        
         switch indexPath.section {
         case 1:
             switch indexPath.row {
             case 0:
-                return CGRect(x: collectionView.frame.size.width, y: 0, width: eventWidth / 2, height: eventHeight)
-            case events.count + 1:
-                return CGRect(x: collectionView.frame.size.width + (CGFloat(events.count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
+                return CGRect(x: horizontalOffset, y: 0, width: eventWidth / 2, height: eventHeight)
+            case events[indexPath.section - 1].count + 1:
+                return CGRect(x: horizontalOffset + (CGFloat(events[indexPath.section - 1].count) / 2) * eventWidth, y: indexPath.row % 2 == 0 ? 0 : eventHeight, width: eventWidth / 2, height: eventHeight)
             default:
-                return CGRect(x: collectionView.frame.size.width + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
+                return CGRect(x: horizontalOffset + CGFloat(indexPath.item - 1) * (eventWidth / 2), y: (indexPath.item - 1) % 2 == 0 ? eventHeight : 0, width: eventWidth, height: eventHeight)
             }
         default:
             return .zero
