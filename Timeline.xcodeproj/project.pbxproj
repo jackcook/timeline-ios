@@ -25,6 +25,7 @@
 		EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2481F3AE3EF00D0D954 /* StartCell.swift */; };
 		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
 		EB6718371F71D691000D245E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6718361F71D691000D245E /* Events.plist */; };
+		EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67183A1F71DB68000D245E /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		EB19B2481F3AE3EF00D0D954 /* StartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartCell.swift; path = Views/StartCell.swift; sourceTree = "<group>"; };
 		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
 		EB6718361F71D691000D245E /* Events.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
+		EB67183A1F71DB68000D245E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				EB19B2361F3AE3BA00D0D954 /* UIColor+Extensions.swift */,
+				EB67183A1F71DB68000D245E /* Date+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */,
 				EB19B23F1F3AE3E000D0D954 /* TimelineLayout.swift in Sources */,
+				EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */,
 				EB19B2301F3AE3A900D0D954 /* AppDelegate.swift in Sources */,
 				EB19B23A1F3AE3CC00D0D954 /* Event.swift in Sources */,
 				EB19B24D1F3AE3EF00D0D954 /* FillCell.swift in Sources */,

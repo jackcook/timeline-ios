@@ -18,7 +18,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         
         for event in events {
             // 2013 - 1970 = 43, first event's year
-            if years.count <= event.year - 43 {
+            if years.count <= event.date.year - 43 {
                 years.append([event])
             } else {
                 years[years.count - 1].append(event)

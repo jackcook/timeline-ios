@@ -13,14 +13,6 @@ struct Event {
     let name: String
     let date: Date
     
-    var month: Int {
-        return Calendar.current.dateComponents([.month], from: Date(timeIntervalSince1970: 0), to: date).month ?? 0
-    }
-    
-    var year: Int {
-        return Calendar.current.dateComponents([.year], from: Date(timeIntervalSince1970: 0), to: date).year ?? 0
-    }
-    
     init(data: [String: Any]) {
         guard let name = data["Name"] as? String, let date = data["Date"] as? Date else {
             fatalError("Error loading events from plist file")
