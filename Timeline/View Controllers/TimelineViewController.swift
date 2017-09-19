@@ -12,48 +12,21 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var events: [[Event]] = [
-        [
-            .easyMeasure
-        ],
-        [
-            .elementAnimation,
-            .mcproHosting,
-            .beamCreation,
-            .hackTheNorth,
-            .hackUpstate,
-            .hackRU,
-            .hackNY,
-            .codeDay,
-            .wildHacks,
-            .firstLocalHackDay
-        ],
-        [
-            .mHacks,
-            .hackGenY,
-            .uoftHacks,
-            .mcHacks,
-            .hackDFW,
-            .atomHacks,
-            .secondHackRU,
-            .secondLocalHackDay
-        ],
-        [
-            .techStars,
-            .hackNY,
-            .thirdHackRU,
-            .techCrunchDisrupt,
-            .secondAtomHacks,
-            .microsoftAcquisition,
-            .thirdLocalHackDay
-        ],
-        [
-            .topCharts,
-            .thirdAtomHacks,
-            .mixerRebrand,
-            .microsoftSummer
-        ]
-    ]
+    private let events: [[Event]] = {
+        var events = Event.loadAllEvents()
+        var years = [[Event]]()
+        
+        for event in events {
+            // 2013 - 1970 = 43, first event's year
+            if years.count <= event.year - 43 {
+                years.append([event])
+            } else {
+                years[years.count - 1].append(event)
+            }
+        }
+        
+        return years
+    }()
     
     private var yearLabels = [UILabel]()
     

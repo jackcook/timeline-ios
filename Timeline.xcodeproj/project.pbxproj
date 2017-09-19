@@ -24,6 +24,7 @@
 		EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */; };
 		EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2481F3AE3EF00D0D954 /* StartCell.swift */; };
 		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
+		EB6718371F71D691000D245E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6718361F71D691000D245E /* Events.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FillCellTop.xib; path = Views/FillCellTop.xib; sourceTree = "<group>"; };
 		EB19B2481F3AE3EF00D0D954 /* StartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartCell.swift; path = Views/StartCell.swift; sourceTree = "<group>"; };
 		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
+		EB6718361F71D691000D245E /* Events.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				EB19B2391F3AE3CC00D0D954 /* Event.swift */,
+				EB6718361F71D691000D245E /* Events.plist */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */,
 				EB19B2311F3AE3A900D0D954 /* Info.plist in Resources */,
 				753BE06C1F3A4697006D2B1F /* Assets.xcassets in Resources */,
+				EB6718371F71D691000D245E /* Events.plist in Resources */,
 				EB19B24C1F3AE3EF00D0D954 /* EventCellTop.xib in Resources */,
 				EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */,
 				EB19B2331F3AE3A900D0D954 /* Main.storyboard in Resources */,
