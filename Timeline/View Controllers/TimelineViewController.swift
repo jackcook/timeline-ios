@@ -23,11 +23,17 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             .hackTheNorth,
             .hackUpstate,
             .hackRU,
+            .hackNY,
+            .codeDay,
+            .wildHacks,
             .firstLocalHackDay
         ],
         [
+            .mHacks,
             .hackGenY,
+            .uoftHacks,
             .mcHacks,
+            .hackDFW,
             .atomHacks,
             .secondHackRU,
             .secondLocalHackDay
@@ -44,7 +50,8 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         [
             .topCharts,
             .thirdAtomHacks,
-            .mixerRebrand
+            .mixerRebrand,
+            .microsoftSummer
         ]
     ]
     
@@ -163,7 +170,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - collectionView.frame.size.width
             
             let currentPoint = view.convert(CGPoint.zero, to: collectionView).x
-            let percentage = (currentPoint - startPoint) / (endPoint - startPoint)
+            let percentage = endPoint - startPoint == 0 ? 0 : (currentPoint - startPoint) / (endPoint - startPoint)
             
             let minimumPoint = collectionView.convert(CGPoint(x: startPoint, y: 0), to: view).x + labelPadding
             let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x + collectionView.frame.size.width - label.frame.size.width - labelPadding

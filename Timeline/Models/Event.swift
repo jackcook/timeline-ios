@@ -41,11 +41,18 @@ struct Event {
     static let hackTheNorth = Event("Attended Hack the North", 09, 19, 14)
     static let hackUpstate = Event("Won 2nd place overall at Hack Upstate", 10, 03, 14)
     static let hackRU = Event("Won Pebble API prize at HackRU", 10, 11, 14)
+    static let firstHackNY = Event("Attended hackNY Fall 2014", 10, 18, 14)
+    static let codeDay = Event("Attended CodeDay NY 2014", 11, 08, 14)
+    static let wildHacks = Event("Attended WildHacks 2014", 11, 22, 14)
     static let firstLocalHackDay = Event("Gave a talk on iOS development at the first Local Hack Day", 12, 06, 14)
     
     // 2015
+    static let mHacks = Event("Attended MHacks V", 01, 16, 15)
     static let hackGenY = Event("Won 2nd place overall at Hack Gen Y", 01, 24, 15)
+    static let uoftHacks = Event("Attended UofTHacks", 01, 30, 15)
+    static let hackCooper = Event("Attended HackCooper", 02, 14, 15)
     static let mcHacks = Event("Won 3rd place overall at McHacks", 02, 21, 15)
+    static let hackDFW = Event("Attended HackDFW 2015", 02, 28, 15)
     static let atomHacks = Event("Organized the first AtomHacks", 05, 30, 15)
     static let secondHackRU = Event("Won best solo hack at HackRU", 10, 03, 15)
     static let secondLocalHackDay = Event("Organized Bronx Science's first LocalHackDay", 10, 10, 15)
@@ -63,4 +70,5 @@ struct Event {
     static let topCharts = Event("Mixer places in the top 30 entertainment apps", 03, 31, 17)
     static let thirdAtomHacks = Event("Organized Bronx Science's third AtomHacks", 05, 13, 17)
     static let mixerRebrand = Event("Beam rebrands to Mixer", 05, 25, 17)
+    static let microsoftSummer = Event("Spent my summer at Microsoft", 08, 29, 17)
 }
