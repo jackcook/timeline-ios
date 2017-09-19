@@ -17,8 +17,8 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         var years = [[Event]]()
         
         for event in events {
-            // 2013 - 1970 = 43, first event's year
-            if years.count <= event.date.year - 43 {
+            // 2013 is the year of the first event
+            if years.count <= event.date.year - 2013 {
                 years.append([event])
             } else {
                 years[years.count - 1].append(event)
@@ -55,13 +55,9 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
         
         for section in events {
-            guard let year = Calendar.current.dateComponents([.year], from: section[0].date).year else {
-                return
-            }
-            
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightSemibold)
-            label.text = "\(year)"
+            label.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
+            label.text = "\(section[0].date.year)"
             label.textColor = UIColor.white
             
             yearLabels.append(label)

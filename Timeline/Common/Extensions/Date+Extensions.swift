@@ -13,14 +13,14 @@ extension Date {
     static var zero = Date(timeIntervalSince1970: 0)
     
     var day: Int {
-        return Calendar.current.dateComponents([.day], from: .zero, to: self).day ?? 0
+        return Calendar.current.dateComponents([.day], from: self).day ?? 0
     }
     
     var month: Int {
-        return Calendar.current.dateComponents([.month], from: .zero, to: self).month ?? 0
+        return Calendar.current.dateComponents([.month], from: self).month ?? 0
     }
     
     var year: Int {
-        return Calendar.current.dateComponents([.year], from: .zero, to: self).year ?? 0
+        return Calendar.current.dateComponents([.year], from: self).year ?? 0
     }
 }
