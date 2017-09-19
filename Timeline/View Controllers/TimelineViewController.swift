@@ -159,15 +159,15 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             
             let labelPadding = (view.frame.size.height * (1 / 8) - label.frame.size.height) / 2
             
-            let startPoint = firstCellFrame.origin.x + labelPadding
-            let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - labelPadding - label.frame.size.width
+            let startPoint = firstCellFrame.origin.x
+            let endPoint = lastCellFrame.origin.x + lastCellFrame.size.width - collectionView.frame.size.width
             
-            let currentPoint = view.convert(view.center, to: collectionView).x
+            let currentPoint = view.convert(CGPoint.zero, to: collectionView).x
             let percentage = (currentPoint - startPoint) / (endPoint - startPoint)
             
-            let minimumPoint = collectionView.convert(CGPoint(x: startPoint, y: 0), to: view).x
-            let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x
-            let x = min(max(percentage * view.frame.size.width, minimumPoint), maximumPoint)
+            let minimumPoint = collectionView.convert(CGPoint(x: startPoint, y: 0), to: view).x + labelPadding
+            let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x + collectionView.frame.size.width - label.frame.size.width - labelPadding
+            let x = min(max(labelPadding + percentage * (collectionView.frame.size.width - label.frame.size.width - labelPadding * 2), minimumPoint), maximumPoint)
             
             let y = view.frame.size.height * (7 / 8) + labelPadding
             
