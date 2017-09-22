@@ -88,25 +88,31 @@
 	</dict>
 	<dict>
 		<key>Name</key>
+		<string>Gave a talk about Python for Local Hack Day</string>
+		<key>Date</key>
+		<date>2015-10-09T04:00:00Z</date>
+	</dict>
+	<dict>
+		<key>Name</key>
 		<string>Organized Bronx Science&apos;s first Local Hack Day</string>
 		<key>Date</key>
 		<date>2015-10-10T04:00:00Z</date>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Began our time at TechStars Seattle</string>
+		<string>Beam is accepted into TechStars Seattle</string>
 		<key>Date</key>
 		<date>2016-02-23T05:00:00Z</date>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Won first place overall at hackNY</string>
+		<string>Won 1st place overall at hackNY</string>
 		<key>Date</key>
 		<date>2016-04-04T04:00:00Z</date>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Finalist at HackRU</string>
+		<string>Placed as a finalist at HackRU</string>
 		<key>Date</key>
 		<date>2016-04-18T04:00:00Z</date>
 	</dict>
@@ -130,13 +136,13 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Organized Bronx Science&apos;s second LocalHackDay</string>
+		<string>Organized Bronx Science&apos;s second Local Hack Day</string>
 		<key>Date</key>
 		<date>2016-12-03T05:00:00Z</date>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Mixer places in the top 30 entertainment apps</string>
+		<string>Beam reaches the top 20 entertainment apps on the App Store</string>
 		<key>Date</key>
 		<date>2017-03-31T04:00:00Z</date>
 	</dict>
@@ -160,7 +166,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Spent my summer at Microsoft</string>
+		<string>Spent my summer at Microsoft&apos;s engineering offices in Seattle</string>
 		<key>Date</key>
 		<date>2017-08-29T04:00:00Z</date>
 	</dict>
