@@ -29,6 +29,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     }()
     
     private var yearLabels = [UILabel]()
+    private var yearLabelBackgrounds = [CAGradientLayer]()
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -37,6 +38,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.bounces = false
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -54,7 +56,18 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.register(EventCell.topNib, forCellWithReuseIdentifier: EventCell.topIdentifier)
         collectionView.register(EventCell.bottomNib, forCellWithReuseIdentifier: EventCell.bottomIdentifier)
         
-        for section in events {
+        for (idx, section) in events.enumerated() {
+            let colors = [0, 1, 1, 0].map { alpha -> CGColor in
+                return UIColor.sectionColors[idx + 1].withAlphaComponent(alpha).cgColor
+            }
+            
+            let layer = CAGradientLayer()
+            layer.colors = colors
+            layer.startPoint = CGPoint(x: 0, y: 0.5)
+            layer.endPoint = CGPoint(x: 1, y: 0.5)
+            yearLabelBackgrounds.append(layer)
+            view.layer.addSublayer(layer)
+            
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
             label.text = "\(section[0].date.year)"
@@ -149,6 +162,13 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             
             let frame = CGRect(x: x, y: y, width: label.frame.size.width, height: label.frame.size.height)
             label.frame = frame
+            
+            let horizontalMargin: CGFloat = min(48, x - minimumPoint, maximumPoint - (x + label.frame.size.width))
+            
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            yearLabelBackgrounds[idx].frame = CGRect(x: x - horizontalMargin, y: y, width: label.frame.size.width + 2 * horizontalMargin, height: label.frame.size.height)
+            CATransaction.commit()
         }
     }
     

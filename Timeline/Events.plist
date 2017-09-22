@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Started Beam</string>
+		<string>Launched early prototype of Beam</string>
 		<key>Date</key>
 		<date>2014-08-19T04:00:00Z</date>
 	</dict>
@@ -52,7 +52,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Gave a talk on iOS development at the first Local Hack Day</string>
+		<string>Gave a talk about iOS development at the first Local Hack Day</string>
 		<key>Date</key>
 		<date>2014-12-06T05:00:00Z</date>
 	</dict>
@@ -64,7 +64,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Won 3rd place overall at McHacks 2015</string>
+		<string>Won 3rd place overall at McHacks</string>
 		<key>Date</key>
 		<date>2015-02-21T05:00:00Z</date>
 	</dict>
@@ -76,13 +76,19 @@
 	</dict>
 	<dict>
 		<key>Name</key>
+		<string>Won &quot;Huge&quot; innovation prize at AngelHack Brooklyn</string>
+		<key>Date</key>
+		<date>2015-06-06T04:00:00Z</date>
+	</dict>
+	<dict>
+		<key>Name</key>
 		<string>Won best solo hack at HackRU</string>
 		<key>Date</key>
 		<date>2015-10-03T04:00:00Z</date>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Organized Bronx Science&apos;s first LocalHackDay</string>
+		<string>Organized Bronx Science&apos;s first Local Hack Day</string>
 		<key>Date</key>
 		<date>2015-10-10T04:00:00Z</date>
 	</dict>
@@ -112,7 +118,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Organized the second AtomHacks</string>
+		<string>Organized AtomHacks II</string>
 		<key>Date</key>
 		<date>2016-05-14T04:00:00Z</date>
 	</dict>
@@ -136,7 +142,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Organized Bronx Science&apos;s third AtomHacks</string>
+		<string>Organized AtomHacks III</string>
 		<key>Date</key>
 		<date>2017-05-13T04:00:00Z</date>
 	</dict>

@@ -36,14 +36,22 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-dz-19g">
+                    <rect key="frame" x="204" y="260.5" width="54" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.4931640625" green="0.48867187499999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="0nb-3h-tvL"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5yb-ae-KbC"/>
+                <constraint firstItem="Myg-dz-19g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HEi-S9-gYQ"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="top" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="JYh-g8-Xsi"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="R7d-CZ-Alb"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="REU-vq-xEs"/>
+                <constraint firstAttribute="bottom" secondItem="Myg-dz-19g" secondAttribute="bottom" constant="40" id="ReK-aU-HGs"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j4X-vx-QOV"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" constant="16" id="mnt-Lw-YJM"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="w89-A9-VQE"/>
@@ -54,6 +62,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="Qrc-4w-17B"/>
+                <outlet property="monthLabel" destination="Myg-dz-19g" id="eYx-De-rG3"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>
         </view>

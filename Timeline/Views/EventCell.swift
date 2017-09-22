@@ -21,6 +21,7 @@ class EventCell: UICollectionViewCell {
     // MARK: - Variables
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var monthLabel: UILabel?
     
     var event: Event? {
         didSet {
@@ -29,12 +30,7 @@ class EventCell: UICollectionViewCell {
             }
             
             label.text = event.name
+            monthLabel?.text = event.date.monthName
         }
-    }
-    
-    // MARK: - View Life Cycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
 }
