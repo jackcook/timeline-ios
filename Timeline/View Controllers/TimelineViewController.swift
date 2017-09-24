@@ -135,6 +135,16 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     
     // MARK: UICollectionViewDelegate Methods
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let eventController = UIStoryboard.main.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {
+            return
+        }
+        
+        present(eventController, animated: false) {
+            eventController.animate()
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for (idx, label) in yearLabels.enumerated() {
             let firstIndexPath = IndexPath(item: 0, section: idx + 1)

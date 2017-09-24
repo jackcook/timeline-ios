@@ -25,6 +25,8 @@
 		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
 		EB6718371F71D691000D245E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6718361F71D691000D245E /* Events.plist */; };
 		EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67183A1F71DB68000D245E /* Date+Extensions.swift */; };
+		EBEB0B8E1F759E99000EC67C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8D1F759E99000EC67C /* EventViewController.swift */; };
+		EBEB0B901F75A10B000EC67C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
 		EB6718361F71D691000D245E /* Events.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
 		EB67183A1F71DB68000D245E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		EBEB0B8D1F759E99000EC67C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				EB19B2361F3AE3BA00D0D954 /* UIColor+Extensions.swift */,
+				EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */,
 				EB67183A1F71DB68000D245E /* Date+Extensions.swift */,
 			);
 			name = Extensions;
@@ -132,6 +137,7 @@
 			children = (
 				EB19B23D1F3AE3E000D0D954 /* TimelineLayout.swift */,
 				EB19B23E1F3AE3E000D0D954 /* TimelineViewController.swift */,
+				EBEB0B8D1F759E99000EC67C /* EventViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 				EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */,
 				EB19B2301F3AE3A900D0D954 /* AppDelegate.swift in Sources */,
 				EB19B23A1F3AE3CC00D0D954 /* Event.swift in Sources */,
+				EBEB0B8E1F759E99000EC67C /* EventViewController.swift in Sources */,
 				EB19B24D1F3AE3EF00D0D954 /* FillCell.swift in Sources */,
 				EB19B2371F3AE3BA00D0D954 /* UIColor+Extensions.swift in Sources */,
 				EB19B24A1F3AE3EF00D0D954 /* EventCell.swift in Sources */,
+				EBEB0B901F75A10B000EC67C /* UIStoryboard+Extensions.swift in Sources */,
 				EB19B2401F3AE3E000D0D954 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
