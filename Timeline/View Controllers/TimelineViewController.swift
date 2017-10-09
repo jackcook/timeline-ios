@@ -49,6 +49,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         collectionView.collectionViewLayout = layout
         
         collectionView.register(StartCell.nib, forCellWithReuseIdentifier: StartCell.identifier)
+        collectionView.register(EndCell.nib, forCellWithReuseIdentifier: EndCell.identifier)
         
         collectionView.register(FillCell.topNib, forCellWithReuseIdentifier: FillCell.topIdentifier)
         collectionView.register(FillCell.bottomNib, forCellWithReuseIdentifier: FillCell.bottomIdentifier)
@@ -81,11 +82,11 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: - UICollectionViewDataSource Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1 + events.count
+        return 2 + events.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section == 0 ? 1 : events[section - 1].count + 2
+        return (section == 0 || section == numberOfSections(in: collectionView) - 1) ? 1 : events[section - 1].count + 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,6 +95,8 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         switch indexPath.section {
         case 0:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: StartCell.identifier, for: indexPath)
+        case numberOfSections(in: collectionView) - 1:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: EndCell.identifier, for: indexPath)
         default:
             guard let layoutAttributes = collectionView.layoutAttributesForItem(at: indexPath) else {
                 fatalError()

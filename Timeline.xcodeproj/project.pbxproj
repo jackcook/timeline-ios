@@ -25,6 +25,8 @@
 		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
 		EB6718371F71D691000D245E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6718361F71D691000D245E /* Events.plist */; };
 		EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67183A1F71DB68000D245E /* Date+Extensions.swift */; };
+		EB7185381F8C117800512538 /* EndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7185371F8C117800512538 /* EndCell.swift */; };
+		EB71853A1F8C119B00512538 /* EndCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7185391F8C119B00512538 /* EndCell.xib */; };
 		EBEB0B8E1F759E99000EC67C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8D1F759E99000EC67C /* EventViewController.swift */; };
 		EBEB0B901F75A10B000EC67C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
 		EB6718361F71D691000D245E /* Events.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
 		EB67183A1F71DB68000D245E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		EB7185371F8C117800512538 /* EndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndCell.swift; sourceTree = "<group>"; };
+		EB7185391F8C119B00512538 /* EndCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EndCell.xib; path = Views/EndCell.xib; sourceTree = "<group>"; };
 		EBEB0B8D1F759E99000EC67C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +157,8 @@
 				EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */,
 				EB19B2481F3AE3EF00D0D954 /* StartCell.swift */,
 				EB19B2491F3AE3EF00D0D954 /* StartCell.xib */,
+				EB7185371F8C117800512538 /* EndCell.swift */,
+				EB7185391F8C119B00512538 /* EndCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 				EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */,
 				EB19B2331F3AE3A900D0D954 /* Main.storyboard in Resources */,
 				EB19B24E1F3AE3EF00D0D954 /* FillCellBottom.xib in Resources */,
+				EB71853A1F8C119B00512538 /* EndCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +251,7 @@
 				EB19B23A1F3AE3CC00D0D954 /* Event.swift in Sources */,
 				EBEB0B8E1F759E99000EC67C /* EventViewController.swift in Sources */,
 				EB19B24D1F3AE3EF00D0D954 /* FillCell.swift in Sources */,
+				EB7185381F8C117800512538 /* EndCell.swift in Sources */,
 				EB19B2371F3AE3BA00D0D954 /* UIColor+Extensions.swift in Sources */,
 				EB19B24A1F3AE3EF00D0D954 /* EventCell.swift in Sources */,
 				EBEB0B901F75A10B000EC67C /* UIStoryboard+Extensions.swift in Sources */,

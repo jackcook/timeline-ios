@@ -41,7 +41,7 @@ class TimelineLayout: UICollectionViewFlowLayout {
             return .zero
         }
         
-        let width = collectionView.frame.size.width + (eventWidth / 2) * CGFloat(events.flatMap({ $0 }).count + events.count - 1 + 1)
+        let width = 2 * collectionView.frame.size.width + (eventWidth / 2) * CGFloat(events.flatMap({ $0 }).count + events.count - 1 + 1)
         return CGSize(width: width, height: collectionView.frame.size.height)
     }
     
@@ -72,6 +72,8 @@ class TimelineLayout: UICollectionViewFlowLayout {
         switch indexPath.section {
         case 0:
             return CGRect(x: 0, y: 0, width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        case collectionView.numberOfSections - 1:
+            return CGRect(x: horizontalOffset, y: 0, width: collectionView.frame.size.width, height: collectionView.frame.size.height)
         default:
             switch indexPath.row {
             case 0:
