@@ -170,8 +170,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
             let minimumPoint = collectionView.convert(CGPoint(x: startPoint, y: 0), to: view).x + labelPadding
             let maximumPoint = collectionView.convert(CGPoint(x: endPoint, y: 0), to: view).x + collectionView.frame.size.width - label.frame.size.width - labelPadding
             let x = min(max(labelPadding + percentage * (collectionView.frame.size.width - label.frame.size.width - labelPadding * 2), minimumPoint), maximumPoint)
-            
-            let y = view.frame.size.height * (7 / 8) + labelPadding
+            let y = view.frame.size.height - 50 - label.frame.size.height / 2
             
             let frame = CGRect(x: x, y: y, width: label.frame.size.width, height: label.frame.size.height)
             label.frame = frame
