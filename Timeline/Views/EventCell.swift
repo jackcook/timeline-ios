@@ -69,6 +69,7 @@ class EventCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        mediaView.layer.borderWidth = 0
         mediaView.image = nil
     }
     

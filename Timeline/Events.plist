@@ -54,9 +54,11 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Gave a talk about iOS development for the first Local Hack Day</string>
+		<string>Gave a live talk for the first Local Hack Day</string>
 		<key>Date</key>
 		<date>2014-12-06T05:00:00Z</date>
+		<key>Video</key>
+		<string>lhd1</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -93,6 +95,8 @@
 		<string>Gave a talk about Python for Local Hack Day</string>
 		<key>Date</key>
 		<date>2015-10-09T04:00:00Z</date>
+		<key>Video</key>
+		<string>lhd2</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -108,21 +112,27 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Won 1st place overall at hackNY</string>
+		<string>Won first place overall at hackNY</string>
 		<key>Date</key>
 		<date>2016-04-04T04:00:00Z</date>
+		<key>Video</key>
+		<string>hackny</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Placed as a finalist at HackRU</string>
+		<string>Presented to 1,000 people at the New York Tech Meetup</string>
 		<key>Date</key>
-		<date>2016-04-18T04:00:00Z</date>
+		<date>2016-05-03T04:00:00Z</date>
+		<key>Video</key>
+		<string>nytm</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>Beam wins TechCrunch Disrupt NY</string>
 		<key>Date</key>
 		<date>2016-05-11T04:00:00Z</date>
+		<key>Video</key>
+		<string>tcdisrupt</string>
 	</dict>
 	<dict>
 		<key>Name</key>

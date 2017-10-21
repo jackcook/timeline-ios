@@ -23,6 +23,11 @@
 		EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */; };
 		EB19B2501F3AE3EF00D0D954 /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB19B2481F3AE3EF00D0D954 /* StartCell.swift */; };
 		EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB19B2491F3AE3EF00D0D954 /* StartCell.xib */; };
+		EB4DD8B21F9BF49100063375 /* hackny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB4DD8B11F9BF49000063375 /* hackny.mp4 */; };
+		EB4DD8B41F9BF5BE00063375 /* nytm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB4DD8B31F9BF5BE00063375 /* nytm.mp4 */; };
+		EB4DD8B61F9BF69100063375 /* tcdisrupt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB4DD8B51F9BF69100063375 /* tcdisrupt.mp4 */; };
+		EB4DD8B81F9BF88000063375 /* lhd1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB4DD8B71F9BF88000063375 /* lhd1.mp4 */; };
+		EB4DD8BA1F9BFB0F00063375 /* lhd2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB4DD8B91F9BFB0F00063375 /* lhd2.mp4 */; };
 		EB6718371F71D691000D245E /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6718361F71D691000D245E /* Events.plist */; };
 		EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67183A1F71DB68000D245E /* Date+Extensions.swift */; };
 		EB7185381F8C117800512538 /* EndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7185371F8C117800512538 /* EndCell.swift */; };
@@ -51,6 +56,11 @@
 		EB19B2471F3AE3EF00D0D954 /* FillCellTop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FillCellTop.xib; path = Views/FillCellTop.xib; sourceTree = "<group>"; };
 		EB19B2481F3AE3EF00D0D954 /* StartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartCell.swift; path = Views/StartCell.swift; sourceTree = "<group>"; };
 		EB19B2491F3AE3EF00D0D954 /* StartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartCell.xib; path = Views/StartCell.xib; sourceTree = "<group>"; };
+		EB4DD8B11F9BF49000063375 /* hackny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = hackny.mp4; path = Models/hackny.mp4; sourceTree = "<group>"; };
+		EB4DD8B31F9BF5BE00063375 /* nytm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = nytm.mp4; path = Models/nytm.mp4; sourceTree = "<group>"; };
+		EB4DD8B51F9BF69100063375 /* tcdisrupt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = tcdisrupt.mp4; path = Models/tcdisrupt.mp4; sourceTree = "<group>"; };
+		EB4DD8B71F9BF88000063375 /* lhd1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = lhd1.mp4; path = Models/lhd1.mp4; sourceTree = "<group>"; };
+		EB4DD8B91F9BFB0F00063375 /* lhd2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = lhd2.mp4; path = Models/lhd2.mp4; sourceTree = "<group>"; };
 		EB6718361F71D691000D245E /* Events.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
 		EB67183A1F71DB68000D245E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
 		EB7185371F8C117800512538 /* EndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndCell.swift; sourceTree = "<group>"; };
@@ -135,6 +145,11 @@
 				EB19B2391F3AE3CC00D0D954 /* Event.swift */,
 				EB6718361F71D691000D245E /* Events.plist */,
 				EBC1B7BC1F9BB4D1003BBAFD /* mhacks.mp4 */,
+				EB4DD8B11F9BF49000063375 /* hackny.mp4 */,
+				EB4DD8B31F9BF5BE00063375 /* nytm.mp4 */,
+				EB4DD8B51F9BF69100063375 /* tcdisrupt.mp4 */,
+				EB4DD8B71F9BF88000063375 /* lhd1.mp4 */,
+				EB4DD8B91F9BFB0F00063375 /* lhd2.mp4 */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -228,15 +243,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC1B7BD1F9BB4D2003BBAFD /* mhacks.mp4 in Resources */,
+				EB4DD8BA1F9BFB0F00063375 /* lhd2.mp4 in Resources */,
 				EB19B24B1F3AE3EF00D0D954 /* EventCellBottom.xib in Resources */,
 				EB19B2321F3AE3A900D0D954 /* LaunchScreen.storyboard in Resources */,
+				EB4DD8B21F9BF49100063375 /* hackny.mp4 in Resources */,
 				EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */,
 				753BE06C1F3A4697006D2B1F /* Assets.xcassets in Resources */,
+				EB4DD8B61F9BF69100063375 /* tcdisrupt.mp4 in Resources */,
+				EB4DD8B41F9BF5BE00063375 /* nytm.mp4 in Resources */,
 				EB6718371F71D691000D245E /* Events.plist in Resources */,
 				EB19B24C1F3AE3EF00D0D954 /* EventCellTop.xib in Resources */,
 				EB19B2511F3AE3EF00D0D954 /* StartCell.xib in Resources */,
 				EB19B2331F3AE3A900D0D954 /* Main.storyboard in Resources */,
 				EB19B24E1F3AE3EF00D0D954 /* FillCellBottom.xib in Resources */,
+				EB4DD8B81F9BF88000063375 /* lhd1.mp4 in Resources */,
 				EB71853A1F8C119B00512538 /* EndCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
