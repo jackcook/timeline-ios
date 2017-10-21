@@ -12,6 +12,7 @@ struct Event {
     
     let name: String
     let date: Date
+    let video: String?
     
     init(data: [String: Any]) {
         guard let name = data["Name"] as? String, let date = data["Date"] as? Date else {
@@ -20,6 +21,7 @@ struct Event {
         
         self.name = name
         self.date = date
+        self.video = data["Video"] as? String
     }
     
     static func loadAllEvents() -> [Event] {

@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,18 +42,25 @@
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzI-Bx-rWx">
+                    <rect key="frame" x="32" y="154.5" width="397" height="74"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.4931640625" green="0.48867187499999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="0nb-3h-tvL"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5yb-ae-KbC"/>
                 <constraint firstItem="Myg-dz-19g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HEi-S9-gYQ"/>
+                <constraint firstItem="Myg-dz-19g" firstAttribute="top" secondItem="wzI-Bx-rWx" secondAttribute="bottom" constant="32" id="HLG-x5-7En"/>
+                <constraint firstItem="wzI-Bx-rWx" firstAttribute="top" secondItem="nm3-I9-Yg9" secondAttribute="bottom" constant="32" id="Ips-Ba-DTT"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="top" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="JYh-g8-Xsi"/>
+                <constraint firstAttribute="trailing" secondItem="wzI-Bx-rWx" secondAttribute="trailing" constant="32" id="R1i-hf-6W5"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="R7d-CZ-Alb"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="REU-vq-xEs"/>
                 <constraint firstAttribute="bottom" secondItem="Myg-dz-19g" secondAttribute="bottom" constant="40" id="ReK-aU-HGs"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j4X-vx-QOV"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" constant="16" id="mnt-Lw-YJM"/>
+                <constraint firstItem="wzI-Bx-rWx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="pc8-IG-hyj"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="w89-A9-VQE"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -62,6 +69,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="Qrc-4w-17B"/>
+                <outlet property="mediaView" destination="wzI-Bx-rWx" id="SCF-ji-R40"/>
                 <outlet property="monthLabel" destination="Myg-dz-19g" id="eYx-De-rG3"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>

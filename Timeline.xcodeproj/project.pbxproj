@@ -27,6 +27,7 @@
 		EB67183B1F71DB68000D245E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67183A1F71DB68000D245E /* Date+Extensions.swift */; };
 		EB7185381F8C117800512538 /* EndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7185371F8C117800512538 /* EndCell.swift */; };
 		EB71853A1F8C119B00512538 /* EndCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7185391F8C119B00512538 /* EndCell.xib */; };
+		EBC1B7BD1F9BB4D2003BBAFD /* mhacks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBC1B7BC1F9BB4D1003BBAFD /* mhacks.mp4 */; };
 		EBEB0B8E1F759E99000EC67C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8D1F759E99000EC67C /* EventViewController.swift */; };
 		EBEB0B901F75A10B000EC67C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		EB67183A1F71DB68000D245E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Common/Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
 		EB7185371F8C117800512538 /* EndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndCell.swift; sourceTree = "<group>"; };
 		EB7185391F8C119B00512538 /* EndCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EndCell.xib; path = Views/EndCell.xib; sourceTree = "<group>"; };
+		EBC1B7BC1F9BB4D1003BBAFD /* mhacks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = mhacks.mp4; path = Models/mhacks.mp4; sourceTree = "<group>"; };
 		EBEB0B8D1F759E99000EC67C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		EBEB0B8F1F75A10B000EC67C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 			children = (
 				EB19B2391F3AE3CC00D0D954 /* Event.swift */,
 				EB6718361F71D691000D245E /* Events.plist */,
+				EBC1B7BC1F9BB4D1003BBAFD /* mhacks.mp4 */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC1B7BD1F9BB4D2003BBAFD /* mhacks.mp4 in Resources */,
 				EB19B24B1F3AE3EF00D0D954 /* EventCellBottom.xib in Resources */,
 				EB19B2321F3AE3A900D0D954 /* LaunchScreen.storyboard in Resources */,
 				EB19B24F1F3AE3EF00D0D954 /* FillCellTop.xib in Resources */,
