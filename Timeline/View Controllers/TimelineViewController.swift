@@ -82,15 +82,12 @@ class TimelineViewController: UIViewController, EventCellDelegate, UICollectionV
     
     // MARK: - EventCellDelegate Methods
     
-    func eventCell(_ cell: EventCell, didTapVideoWith playerLayer: AVPlayerLayer, frame: CGRect) {
+    func eventCell(_ cell: EventCell, didTapVideoWith url: URL) {
         guard presentedViewController == nil, let eventController = UIStoryboard.main.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {
             return
         }
         
-        eventController.playerLayer = playerLayer
-        eventController.playerLayerFrame = playerLayer.convert(frame, to: view.layer)
-        eventController.sourceCell = cell
-        
+        eventController.videoURL = url
         present(eventController, animated: true)
     }
     

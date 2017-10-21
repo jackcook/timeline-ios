@@ -11,22 +11,38 @@ import UIKit
 
 class EventViewController: UIViewController {
     
-    var playerLayer: AVPlayerLayer!
-    var playerLayerFrame: CGRect!
-    var sourceCell: EventCell!
+    var videoURL: URL!
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     
+    private var player: AVPlayer!
+    private var playerLayer: AVPlayerLayer!
+    
+    private var playerLayerFrame: CGRect {
+        if let naturalSize = player.currentItem?.asset.tracks(withMediaType: .video).first?.naturalSize {
+            let screen = UIScreen.main.bounds
+            let fullHeight = screen.size.height * 0.75
+            let width = screen.size.width * 0.75
+            let height = width * (fullHeight / naturalSize.height)
+            return CGRect(x: 0, y: (fullHeight - height) / 2, width: width, height: height)
+        } else {
+            return .zero
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playerLayer.removeFromSuperlayer()
+        player = AVPlayer(url: videoURL)
+        playerLayer = AVPlayerLayer(player: player)
         containerView.layer.addSublayer(playerLayer)
         
-        playerLayer.frame = view.convert(playerLayerFrame, to: containerView)
-        
-        sourceCell.generateMediaView()
+        playerLayer.frame = playerLayerFrame
+        playerLayer.shadowColor = UIColor.black.cgColor
+        playerLayer.shadowOffset = CGSize(width: 0, height: 5)
+        playerLayer.shadowOpacity = 1
+        playerLayer.shadowRadius = 8
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: playerLayer.player?.currentItem)
     }
@@ -34,19 +50,9 @@ class EventViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.4) {
-            self.playerLayer.frame = self.containerView.bounds
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        player.play()
         
-        playerLayer.removeFromSuperlayer()
-        
-        UIView.animate(withDuration: 0.4) {
-            self.playerLayer.frame = self.playerLayerFrame
-        }
+        playerLayer.frame = playerLayerFrame
     }
     
     @objc private func playerDidFinishPlaying(notification: Notification) {

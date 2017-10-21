@@ -6,11 +6,11 @@
 //  Copyright © 2017 Jack Cook. All rights reserved.
 //
 
-import AVKit
+import MediaPlayer
 import UIKit
 
 protocol EventCellDelegate {
-    func eventCell(_ cell: EventCell, didTapVideoWith playerLayer: AVPlayerLayer, frame: CGRect)
+    func eventCell(_ cell: EventCell, didTapVideoWith url: URL)
 }
 
 class EventCell: UICollectionViewCell {
@@ -28,10 +28,8 @@ class EventCell: UICollectionViewCell {
     var delegate: EventCellDelegate?
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var mediaView: UIView!
+    @IBOutlet weak var mediaView: UIImageView!
     @IBOutlet weak var monthLabel: UILabel?
-    
-    private var playerLayer: AVPlayerLayer?
     
     var event: Event? {
         didSet {
@@ -42,7 +40,27 @@ class EventCell: UICollectionViewCell {
             label.text = event.name
             monthLabel?.text = event.date.monthName
             
-            generateMediaView()
+            guard let video = event.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") else {
+                return
+            }
+            
+            let url = URL(fileURLWithPath: path)
+            let asset = AVAsset(url: url)
+            
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.generateCGImagesAsynchronously(forTimes: [NSValue(time: CMTimeMakeWithSeconds(0, 1))]) { time1, image, time2, result, error in
+                guard let image = image else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.mediaView.clipsToBounds = true
+                    self.mediaView.image = UIImage(cgImage: image)
+                    self.mediaView.layer.borderColor = UIColor.white.cgColor
+                    self.mediaView.layer.borderWidth = 2
+                    self.mediaView.layer.cornerRadius = 4
+                }
+            }
         }
     }
     
@@ -51,52 +69,17 @@ class EventCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        playerLayer?.removeFromSuperlayer()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        guard let playerLayer = playerLayer, let naturalSize = playerLayer.player?.currentItem?.asset.tracks(withMediaType: .video).first?.naturalSize else {
-            return
-        }
-        
-        let adjustedSize = CGSize(width: naturalSize.width * (mediaView.frame.size.height / naturalSize.height), height: mediaView.frame.size.height)
-        playerLayer.frame = CGRect(x: (mediaView.frame.size.width - adjustedSize.width) / 2, y: 0, width: adjustedSize.width, height: adjustedSize.height)
+        mediaView.image = nil
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        guard let playerLayer = playerLayer, mediaView.frame.contains(point) else {
+        guard mediaView.frame.contains(point), let video = self.event?.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") else {
             return nil
         }
         
-        delegate?.eventCell(self, didTapVideoWith: playerLayer, frame: convert(playerLayer.frame, to: self))
+        let url = URL(fileURLWithPath: path)
+        delegate?.eventCell(self, didTapVideoWith: url)
         
         return self
-    }
-    
-    // MARK: - Public Methods
-    
-    func generateMediaView() {
-        guard let video = event?.video, let mediaView = mediaView, let path = Bundle.main.path(forResource: video, ofType: "mp4") else {
-            return
-        }
-        
-        let url = URL(fileURLWithPath: path)
-        
-        let player = AVPlayer(url: url)
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.borderColor = UIColor.white.cgColor
-        playerLayer?.borderWidth = 2
-        playerLayer?.cornerRadius = 4
-        
-        guard let playerLayer = playerLayer, let naturalSize = playerLayer.player?.currentItem?.asset.tracks(withMediaType: .video).first?.naturalSize else {
-            fatalError("issue creating player layer")
-        }
-        
-        let adjustedSize = CGSize(width: naturalSize.width * (mediaView.frame.size.height / naturalSize.height), height: mediaView.frame.size.height)
-        playerLayer.frame = CGRect(x: (mediaView.frame.size.width - adjustedSize.width) / 2, y: 0, width: adjustedSize.width, height: adjustedSize.height)
-        
-        mediaView.layer.addSublayer(playerLayer)
     }
 }

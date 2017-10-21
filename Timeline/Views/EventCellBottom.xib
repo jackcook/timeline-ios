@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,37 +31,39 @@
                         <constraint firstAttribute="width" constant="8" id="Vgb-Ld-j4g"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
                     <rect key="frame" x="48" y="84" width="365" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-dz-19g">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-dz-19g">
                     <rect key="frame" x="204" y="260.5" width="54" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzI-Bx-rWx">
-                    <rect key="frame" x="32" y="154.5" width="397" height="74"/>
-                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0M8-zh-yvx">
+                    <rect key="frame" x="164.5" y="154.5" width="132" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0M8-zh-yvx" secondAttribute="height" multiplier="1280:720" id="sIx-Jf-o3p"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.4931640625" green="0.48867187499999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="0nb-3h-tvL"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5yb-ae-KbC"/>
                 <constraint firstItem="Myg-dz-19g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HEi-S9-gYQ"/>
-                <constraint firstItem="Myg-dz-19g" firstAttribute="top" secondItem="wzI-Bx-rWx" secondAttribute="bottom" constant="32" id="HLG-x5-7En"/>
-                <constraint firstItem="wzI-Bx-rWx" firstAttribute="top" secondItem="nm3-I9-Yg9" secondAttribute="bottom" constant="32" id="Ips-Ba-DTT"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="top" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="JYh-g8-Xsi"/>
-                <constraint firstAttribute="trailing" secondItem="wzI-Bx-rWx" secondAttribute="trailing" constant="32" id="R1i-hf-6W5"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="R7d-CZ-Alb"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="REU-vq-xEs"/>
                 <constraint firstAttribute="bottom" secondItem="Myg-dz-19g" secondAttribute="bottom" constant="40" id="ReK-aU-HGs"/>
+                <constraint firstItem="0M8-zh-yvx" firstAttribute="top" secondItem="nm3-I9-Yg9" secondAttribute="bottom" constant="32" id="WhA-ig-d0U"/>
+                <constraint firstItem="Myg-dz-19g" firstAttribute="top" secondItem="0M8-zh-yvx" secondAttribute="bottom" constant="32" id="b2Q-t0-UII"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="j4X-vx-QOV"/>
+                <constraint firstItem="0M8-zh-yvx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kLn-d3-QUe"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" constant="16" id="mnt-Lw-YJM"/>
-                <constraint firstItem="wzI-Bx-rWx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="pc8-IG-hyj"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="w89-A9-VQE"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -69,7 +72,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="Qrc-4w-17B"/>
-                <outlet property="mediaView" destination="wzI-Bx-rWx" id="SCF-ji-R40"/>
+                <outlet property="mediaView" destination="0M8-zh-yvx" id="1t6-cb-6SF"/>
                 <outlet property="monthLabel" destination="Myg-dz-19g" id="eYx-De-rG3"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>

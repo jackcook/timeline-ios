@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,30 +31,32 @@
                         <constraint firstAttribute="height" constant="64" id="eZE-AV-FFx"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-I9-Yg9">
                     <rect key="frame" x="48" y="204.5" width="365" height="38.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4p-8p-ahR">
-                    <rect key="frame" x="32" y="32" width="397" height="140.5"/>
-                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-hZ-g2S">
+                    <rect key="frame" x="105.5" y="32" width="250" height="140.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="7fg-hZ-g2S" secondAttribute="height" multiplier="1280:720" id="tRX-Cl-bAd"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.49411764705882355" green="0.49019607843137253" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="7fg-hZ-g2S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8yA-3i-Ayp"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="top" secondItem="nm3-I9-Yg9" secondAttribute="bottom" constant="16" id="9KB-yl-e1b"/>
+                <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="7fg-hZ-g2S" secondAttribute="bottom" constant="32" id="F4h-ms-mVl"/>
                 <constraint firstItem="n6M-B3-dPP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Gl0-xC-7pD"/>
-                <constraint firstAttribute="trailing" secondItem="L4p-8p-ahR" secondAttribute="trailing" constant="32" id="In0-nw-bTd"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KsM-PH-EhQ"/>
+                <constraint firstItem="7fg-hZ-g2S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="M7S-It-C29"/>
                 <constraint firstItem="WiL-3p-uFt" firstAttribute="top" secondItem="n6M-B3-dPP" secondAttribute="bottom" id="Wwq-Bb-CDg"/>
                 <constraint firstAttribute="trailing" secondItem="WiL-3p-uFt" secondAttribute="trailing" id="YlK-h1-RJO"/>
                 <constraint firstAttribute="bottom" secondItem="WiL-3p-uFt" secondAttribute="bottom" id="Yrd-yM-lQD"/>
                 <constraint firstAttribute="trailing" secondItem="nm3-I9-Yg9" secondAttribute="trailing" constant="48" id="hba-F8-X0M"/>
-                <constraint firstItem="L4p-8p-ahR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="nTA-c6-sYx"/>
                 <constraint firstItem="nm3-I9-Yg9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="48" id="odY-Ya-X4U"/>
-                <constraint firstItem="nm3-I9-Yg9" firstAttribute="top" secondItem="L4p-8p-ahR" secondAttribute="bottom" constant="32" id="sDn-0X-Ala"/>
-                <constraint firstItem="L4p-8p-ahR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="xAb-g2-byp"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -61,7 +64,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="oHT-e6-YvK"/>
-                <outlet property="mediaView" destination="L4p-8p-ahR" id="gz9-YG-8nj"/>
+                <outlet property="mediaView" destination="7fg-hZ-g2S" id="9Ar-fH-CXv"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>
         </view>
