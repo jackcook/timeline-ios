@@ -11,6 +11,7 @@ import UIKit
 
 protocol EventCellDelegate {
     func eventCell(_ cell: EventCell, didTapVideoWith url: URL)
+    func eventCell(_ cell: EventCell, didTapPhotoWith photo: UIImage)
 }
 
 class EventCell: UICollectionViewCell {
@@ -40,26 +41,30 @@ class EventCell: UICollectionViewCell {
             label.text = event.name
             monthLabel?.text = event.date.monthName
             
-            guard let video = event.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") else {
-                return
-            }
-            
-            let url = URL(fileURLWithPath: path)
-            let asset = AVAsset(url: url)
-            
-            let generator = AVAssetImageGenerator(asset: asset)
-            generator.generateCGImagesAsynchronously(forTimes: [NSValue(time: CMTimeMakeWithSeconds(0, 1))]) { time1, image, time2, result, error in
-                guard let image = image else {
-                    return
-                }
+            if let video = event.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") {
+                let url = URL(fileURLWithPath: path)
+                let asset = AVAsset(url: url)
                 
-                DispatchQueue.main.async {
-                    self.mediaView.clipsToBounds = true
-                    self.mediaView.image = UIImage(cgImage: image)
-                    self.mediaView.layer.borderColor = UIColor.white.cgColor
-                    self.mediaView.layer.borderWidth = 2
-                    self.mediaView.layer.cornerRadius = 4
+                let generator = AVAssetImageGenerator(asset: asset)
+                generator.generateCGImagesAsynchronously(forTimes: [NSValue(time: CMTimeMakeWithSeconds(0, 1))]) { time1, image, time2, result, error in
+                    guard let image = image else {
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.mediaView.clipsToBounds = true
+                        self.mediaView.image = UIImage(cgImage: image)
+                        self.mediaView.layer.borderColor = UIColor.white.cgColor
+                        self.mediaView.layer.borderWidth = 2
+                        self.mediaView.layer.cornerRadius = 4
+                    }
                 }
+            } else if let name = event.photo, let photo = UIImage(named: name) {
+                mediaView.clipsToBounds = true
+                mediaView.image = photo
+                mediaView.layer.borderColor = UIColor.white.cgColor
+                mediaView.layer.borderWidth = 2
+                mediaView.layer.cornerRadius = 4
             }
         }
     }
@@ -74,12 +79,18 @@ class EventCell: UICollectionViewCell {
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        guard mediaView.frame.contains(point), let video = self.event?.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") else {
+        guard mediaView.frame.contains(point) else {
             return nil
         }
         
-        let url = URL(fileURLWithPath: path)
-        delegate?.eventCell(self, didTapVideoWith: url)
+        if let video = self.event?.video, let path = Bundle.main.path(forResource: video, ofType: "mp4") {
+            let url = URL(fileURLWithPath: path)
+            delegate?.eventCell(self, didTapVideoWith: url)
+        } else if let name = self.event?.photo, let photo = UIImage(named: name) {
+            delegate?.eventCell(self, didTapPhotoWith: photo)
+        } else {
+            return nil
+        }
         
         return self
     }

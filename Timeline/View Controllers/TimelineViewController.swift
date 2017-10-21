@@ -91,6 +91,15 @@ class TimelineViewController: UIViewController, EventCellDelegate, UICollectionV
         present(eventController, animated: true)
     }
     
+    func eventCell(_ cell: EventCell, didTapPhotoWith photo: UIImage) {
+        guard presentedViewController == nil, let eventController = UIStoryboard.main.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {
+            return
+        }
+        
+        eventController.image = photo
+        present(eventController, animated: true)
+    }
+    
     // MARK: - UICollectionViewDataSource Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

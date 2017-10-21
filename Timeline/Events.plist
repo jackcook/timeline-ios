@@ -74,9 +74,11 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Organized the first AtomHacks</string>
+		<string>Organized Bronx Science&apos;s first hackathon</string>
 		<key>Date</key>
 		<date>2015-05-30T04:00:00Z</date>
+		<key>Photo</key>
+		<string>atomhacks1</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -103,12 +105,16 @@
 		<string>Organized Bronx Science&apos;s first Local Hack Day</string>
 		<key>Date</key>
 		<date>2015-10-10T04:00:00Z</date>
+		<key>Photo</key>
+		<string>localhackday</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>Beam is accepted into TechStars Seattle</string>
 		<key>Date</key>
 		<date>2016-02-23T05:00:00Z</date>
+		<key>Photo</key>
+		<string>techstars</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -139,12 +145,16 @@
 		<string>Organized AtomHacks II</string>
 		<key>Date</key>
 		<date>2016-05-14T04:00:00Z</date>
+		<key>Photo</key>
+		<string>atomhacks2</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>Beam is acquired by Microsoft</string>
 		<key>Date</key>
 		<date>2016-08-11T04:00:00Z</date>
+		<key>Photo</key>
+		<string>microsoft</string>
 	</dict>
 	<dict>
 		<key>Name</key>

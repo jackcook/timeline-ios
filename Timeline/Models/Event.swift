@@ -12,6 +12,7 @@ struct Event {
     
     let name: String
     let date: Date
+    let photo: String?
     let video: String?
     
     init(data: [String: Any]) {
@@ -21,6 +22,7 @@ struct Event {
         
         self.name = name
         self.date = date
+        self.photo = data["Photo"] as? String
         self.video = data["Video"] as? String
     }
     
