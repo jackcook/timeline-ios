@@ -6,9 +6,10 @@
 //  Copyright © 2017 Jack Cook. All rights reserved.
 //
 
+import AVKit
 import UIKit
 
-class TimelineViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class TimelineViewController: UIViewController, EventCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -79,6 +80,20 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
         }
     }
     
+    // MARK: - EventCellDelegate Methods
+    
+    func eventCell(_ cell: EventCell, didTapVideoWith playerLayer: AVPlayerLayer, frame: CGRect) {
+        guard presentedViewController == nil, let eventController = UIStoryboard.main.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {
+            return
+        }
+        
+        eventController.playerLayer = playerLayer
+        eventController.playerLayerFrame = playerLayer.convert(frame, to: view.layer)
+        eventController.sourceCell = cell
+        
+        present(eventController, animated: true)
+    }
+    
     // MARK: - UICollectionViewDataSource Methods
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -119,6 +134,7 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
                     fatalError("Could not get collection view cell")
                 }
                 
+                eventCell.delegate = self
                 eventCell.event = events[indexPath.section - 1][indexPath.row - 1]
                 cell = eventCell
             }
@@ -137,16 +153,6 @@ class TimelineViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     // MARK: UICollectionViewDelegate Methods
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let eventController = UIStoryboard.main.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {
-            return
-        }
-        
-        present(eventController, animated: false) {
-            eventController.animate()
-        }
-    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for (idx, label) in yearLabels.enumerated() {

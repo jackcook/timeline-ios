@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +52,7 @@
         <!--Event View Controller-->
         <scene sceneID="YWe-Lh-bRq">
             <objects>
-                <viewController storyboardIdentifier="EventViewController" modalPresentationStyle="overFullScreen" id="aY9-P8-Ft8" customClass="EventViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="aY9-P8-Ft8" customClass="EventViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2oi-mb-DBA"/>
                         <viewControllerLayoutGuide type="bottom" id="bKR-H5-M7f"/>
@@ -70,15 +70,14 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c71-X6-iPz">
-                                <rect key="frame" x="92" y="103.66666666666666" width="552" height="310.33333333333337"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="92" y="52" width="552" height="310.33333333333331"/>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="c71-X6-iPz" firstAttribute="height" secondItem="tHq-WQ-YlK" secondAttribute="height" multiplier="0.75" id="2OV-Rj-79X"/>
+                            <constraint firstItem="c71-X6-iPz" firstAttribute="centerY" secondItem="tHq-WQ-YlK" secondAttribute="centerY" id="GXq-6b-7Nt"/>
                             <constraint firstAttribute="trailing" secondItem="XOE-yS-nJd" secondAttribute="trailing" id="Sd3-de-DbU"/>
                             <constraint firstItem="XOE-yS-nJd" firstAttribute="top" secondItem="2oi-mb-DBA" secondAttribute="bottom" id="eAx-p3-dXu"/>
-                            <constraint firstItem="bKR-H5-M7f" firstAttribute="top" secondItem="c71-X6-iPz" secondAttribute="bottom" id="ftK-zW-Ikb"/>
                             <constraint firstItem="c71-X6-iPz" firstAttribute="centerX" secondItem="tHq-WQ-YlK" secondAttribute="centerX" id="rka-zk-PQe"/>
                             <constraint firstItem="XOE-yS-nJd" firstAttribute="leading" secondItem="tHq-WQ-YlK" secondAttribute="leading" id="w37-r1-Atr"/>
                             <constraint firstItem="bKR-H5-M7f" firstAttribute="top" secondItem="XOE-yS-nJd" secondAttribute="bottom" id="xvs-6w-tyN"/>
