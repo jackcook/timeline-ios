@@ -43,14 +43,14 @@
 		<string>Won 2nd place overall at Hack Upstate</string>
 		<key>Date</key>
 		<date>2014-10-03T04:00:00Z</date>
+		<key>Photo</key>
+		<string>hackupstate</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>Won Pebble API prize at HackRU</string>
 		<key>Date</key>
 		<date>2014-10-11T04:00:00Z</date>
-		<key>Video</key>
-		<string>mhacks</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -59,6 +59,14 @@
 		<date>2014-12-06T05:00:00Z</date>
 		<key>Video</key>
 		<string>lhd1</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Created my first VR hack at MHacks V</string>
+		<key>Date</key>
+		<date>2015-01-16T05:00:00Z</date>
+		<key>Video</key>
+		<string>mhacks</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -164,9 +172,11 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>Beam reaches the top 20 entertainment apps on the App Store</string>
+		<string>Beam breaks into the top 30 entertainment apps on the U.S. App Store</string>
 		<key>Date</key>
 		<date>2017-03-31T04:00:00Z</date>
+		<key>Photo</key>
+		<string>top30</string>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -191,6 +201,14 @@
 		<string>Spent my summer at Microsoft&apos;s engineering offices in Seattle</string>
 		<key>Date</key>
 		<date>2017-08-29T04:00:00Z</date>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Interviewed Leonard Kleinrock, the founder of the Internet</string>
+		<key>Date</key>
+		<date>2017-10-11T04:00:00Z</date>
+		<key>Photo</key>
+		<string>kleinrock</string>
 	</dict>
 </array>
 </plist>

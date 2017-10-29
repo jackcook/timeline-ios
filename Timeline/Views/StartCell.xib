@@ -5,8 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,18 +27,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js0-pV-0m5">
-                    <rect key="frame" x="219" y="277.5" width="60" height="41"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <state key="normal" title="Begin">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
             </subviews>
+            <color key="backgroundColor" red="0.43137254901960786" green="0.38431372549019605" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="js0-pV-0m5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.5" id="1Ms-br-8QS"/>
                 <constraint firstItem="bQb-db-aYy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="2xb-hV-ZFi"/>
-                <constraint firstItem="js0-pV-0m5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="32J-K2-d3I"/>
                 <constraint firstItem="WSa-sD-1TE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="5dw-6i-9JX"/>
                 <constraint firstItem="bQb-db-aYy" firstAttribute="top" secondItem="WSa-sD-1TE" secondAttribute="bottom" constant="16" id="7of-YU-0BT"/>
                 <constraint firstItem="WSa-sD-1TE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="fQX-uC-1IP"/>
