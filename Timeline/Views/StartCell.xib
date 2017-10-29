@@ -6,23 +6,34 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StartCell" customModule="Timeline" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="498" height="397"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSa-sD-1TE">
-                    <rect key="frame" x="32" y="32" width="79.5" height="75.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="My name is Jack Cook." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-db-aYy">
+                    <rect key="frame" x="290.5" y="184" width="443" height="50.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is Jack." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-db-aYy">
-                    <rect key="frame" x="32" y="123.5" width="332" height="51"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building" translatesAutoresizingMaskIntoConstraints="NO" id="Lmu-Hr-seG">
+                    <rect key="frame" x="460" y="306.5" width="104.5" height="104.5"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Lmu-Hr-seG" secondAttribute="height" multiplier="1:1" id="wvi-MZ-mwe"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Here is a brief timeline of my accomplishments." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcW-c9-Exu">
+                    <rect key="frame" x="116" y="483" width="792" height="101"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="101" id="Wip-yf-MWk"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -30,16 +41,24 @@
             </subviews>
             <color key="backgroundColor" red="0.43137254901960786" green="0.38431372549019605" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="bQb-db-aYy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="2xb-hV-ZFi"/>
-                <constraint firstItem="WSa-sD-1TE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="5dw-6i-9JX"/>
-                <constraint firstItem="bQb-db-aYy" firstAttribute="top" secondItem="WSa-sD-1TE" secondAttribute="bottom" constant="16" id="7of-YU-0BT"/>
-                <constraint firstItem="WSa-sD-1TE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="fQX-uC-1IP"/>
+                <constraint firstItem="lcW-c9-Exu" firstAttribute="top" secondItem="Lmu-Hr-seG" secondAttribute="bottom" constant="72" id="4lj-PF-cN8"/>
+                <constraint firstItem="lcW-c9-Exu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="116" id="F7y-l1-Kge"/>
+                <constraint firstItem="lcW-c9-Exu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OlP-vB-xVi"/>
+                <constraint firstItem="Lmu-Hr-seG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TCY-v1-9yK"/>
+                <constraint firstAttribute="bottom" secondItem="lcW-c9-Exu" secondAttribute="bottom" constant="184" id="VjS-j7-Jfn"/>
+                <constraint firstItem="bQb-db-aYy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="184" id="WVq-QJ-BPQ"/>
+                <constraint firstItem="Lmu-Hr-seG" firstAttribute="top" secondItem="bQb-db-aYy" secondAttribute="bottom" constant="72" id="b9J-tV-fPW"/>
+                <constraint firstAttribute="trailing" secondItem="lcW-c9-Exu" secondAttribute="trailing" constant="116" id="dkU-zN-Qha"/>
+                <constraint firstItem="bQb-db-aYy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zSZ-3p-jd5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="96" y="-80.5"/>
+            <point key="canvasLocation" x="96" y="-81"/>
         </view>
     </objects>
+    <resources>
+        <image name="Building" width="240" height="225"/>
+    </resources>
 </document>
