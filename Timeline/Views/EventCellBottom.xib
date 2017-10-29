@@ -73,6 +73,7 @@
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="Qrc-4w-17B"/>
                 <outlet property="mediaView" destination="0M8-zh-yvx" id="1t6-cb-6SF"/>
+                <outlet property="mediaViewAspectRatio" destination="sIx-Jf-o3p" id="ean-7O-OgC"/>
                 <outlet property="monthLabel" destination="Myg-dz-19g" id="eYx-De-rG3"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>

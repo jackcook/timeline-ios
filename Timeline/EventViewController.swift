@@ -24,10 +24,17 @@ class EventViewController: UIViewController {
     private var imageViewFrame: CGRect {
         if let naturalSize = imageView?.image?.size {
             let screen = UIScreen.main.bounds
-            let fullHeight = screen.size.height * 0.75
-            let width = screen.size.width * 0.75
-            let height = width * (naturalSize.height / naturalSize.width)
-            return CGRect(x: 0, y: (fullHeight - height) / 2, width: width, height: height)
+            if naturalSize.width / naturalSize.height > 1 {
+                let fullHeight = screen.size.height * 0.75
+                let width = screen.size.width * 0.75
+                let height = width * (naturalSize.height / naturalSize.width)
+                return CGRect(x: 0, y: (fullHeight - height) / 2, width: width, height: height)
+            } else {
+                let fullWidth = screen.size.width * 0.75
+                let height = screen.size.height * 0.75
+                let width = height * (naturalSize.width / naturalSize.height)
+                return CGRect(x: (fullWidth - width) / 2, y: 0, width: width, height: height)
+            }
         } else {
             return .zero
         }

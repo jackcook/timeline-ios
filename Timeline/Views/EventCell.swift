@@ -30,6 +30,7 @@ class EventCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var mediaView: UIImageView!
+    @IBOutlet weak var mediaViewAspectRatio: NSLayoutConstraint!
     @IBOutlet weak var monthLabel: UILabel?
     
     var event: Event? {
@@ -65,6 +66,11 @@ class EventCell: UICollectionViewCell {
                 mediaView.layer.borderColor = UIColor.white.cgColor
                 mediaView.layer.borderWidth = 2
                 mediaView.layer.cornerRadius = 4
+                
+                // Photo is portrait
+                if photo.size.width / photo.size.height < 1 {
+                    self.mediaViewAspectRatio.constant = -160
+                }
             }
         }
     }

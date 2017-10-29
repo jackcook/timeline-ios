@@ -65,6 +65,7 @@
             <connections>
                 <outlet property="label" destination="nm3-I9-Yg9" id="oHT-e6-YvK"/>
                 <outlet property="mediaView" destination="7fg-hZ-g2S" id="9Ar-fH-CXv"/>
+                <outlet property="mediaViewAspectRatio" destination="tRX-Cl-bAd" id="AUQ-2S-rmj"/>
             </connections>
             <point key="canvasLocation" x="77.5" y="-116.5"/>
         </view>
