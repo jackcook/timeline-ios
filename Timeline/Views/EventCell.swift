@@ -58,6 +58,7 @@ class EventCell: UICollectionViewCell {
                         self.mediaView.layer.borderColor = UIColor.white.cgColor
                         self.mediaView.layer.borderWidth = 2
                         self.mediaView.layer.cornerRadius = 4
+                        self.mediaViewAspectRatio.constant = 0
                     }
                 }
             } else if let name = event.photo, let photo = UIImage(named: name) {
@@ -69,7 +70,9 @@ class EventCell: UICollectionViewCell {
                 
                 // Photo is portrait
                 if photo.size.width / photo.size.height < 1 {
-                    self.mediaViewAspectRatio.constant = -160
+                    self.mediaViewAspectRatio.constant = -116
+                } else {
+                    self.mediaViewAspectRatio.constant = 0
                 }
             }
         }
